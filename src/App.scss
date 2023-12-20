@@ -122,32 +122,9 @@ $currentPercentage: 0;
     border-right: calc(1.1vw + 4px) solid rgba(#3f3, 0.75);
     text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
     white-space: nowrap;
-    animation: typed #{$durTotal + "s"} linear 8s infinite,
-      beam-blink 1s infinite;
+    animation: typed #{$durTotal + "s"} linear 2.5s 1, beam-blink 1s infinite;
   }
-  // &::before {
-  //   // just generating some useful stats here 👋🏼
-  //   content: "#{length($strings)} strings / #{$charCount} chars / #{$durTotal}s duration";
-  //   @media (max-width: 575px) {
-  //     content: "#{length($strings)} strings \A #{$charCount} chars \A #{$durTotal}s duration";
-  //   }
-  //   display: block;
-  //   position: absolute;
-  //   bottom: 0;
-  //   width: 100%;
-  //   padding: 3px 0;
-  //   background: #00f; // aquaman blue
-  //   color: #fff; // Brandon-McConnell white
-  //   text-align: center;
-  //   font-size: 18px;
-  //   letter-spacing: 0.7px;
-  //   white-space: pre-wrap;
-  // }
 }
-// body[onload] {
-// 	&::before, &::after { display: none !important; }
-// 	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1580009/codepen_css-typed-this.png) center / cover;
-// }
 
 .wavy {
   position: relative;
@@ -185,32 +162,33 @@ $currentPercentage: 0;
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 1;
   top: 0;
   left: 0;
   opacity: 0;
   // animation: animate1 6s infinite;
   // transition: all 0.1s ease-in-out;
 
-  animation: animate1 10s 1 forwards;
+  animation: animate1 4s 1 forwards;
   transform-origin: center; /* Set the transform origin for smoother scaling */
-  transition: all 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all 2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @keyframes animate1 {
   0% {
-    transform: scale(0.8);
-    opacity: 0.8;
+    // transform: scale(0.8);
+    opacity: 1;
   }
 
   50% {
-    transform: scale(
-      1.05
-    ); /* Use a slightly larger scale for a smoother effect */
+    // transform: scale(
+    //   1.05
+    // ); /* Use a slightly larger scale for a smoother effect */
     opacity: 1;
   }
 
   100% {
-    transform: scale(0.5);
+    // transform: scale(0.5);
     opacity: 0;
   }
 }
@@ -223,29 +201,49 @@ $currentPercentage: 0;
   left: 0;
   opacity: 0;
   z-index: 1;
-
-  // height: 100svh;
-  // margin: 0 auto;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
-  animation: animate2 12s 1 linear;
+  animation: animate2 10.5s 1 linear;
   transform-origin: center;
   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation-delay: 7s;
+  animation-delay: 2s;
 }
 
 @keyframes animate2 {
   0% {
-    transform: scale(0.7);
-    opacity: 0.8;
+    // transform: scale(0.7);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.05); /* Zoom-in to scale 1.05 for anime2 */
+    // transform: scale(1.05); /* Zoom-in to scale 1.05 for anime2 */
     opacity: 1;
   }
   100% {
-    transform: scale(1); /* Ensure anime2 ends at scale 1 */
+    // transform: scale(1); /* Ensure anime2 ends at scale 1 */
+    opacity: 1;
+  }
+}
+
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+  animation: animate3 12s 1 linear;
+  transform-origin: center;
+  transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
+  animation-delay: 13s;
+}
+
+@keyframes animate3 {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
     opacity: 1;
   }
 }
