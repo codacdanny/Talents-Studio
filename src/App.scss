@@ -166,8 +166,7 @@ $currentPercentage: 0;
   height: 100%;
   top: 0;
   left: 0;
-  opacity: 1;
-  z-index: -1;
+
   animation: animate3 12s 1 linear;
   transform-origin: center;
   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -183,5 +182,35 @@ $currentPercentage: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+.bgGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: 250%;
+
+  background-image: radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
+    radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
+    radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
+    radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
+    radial-gradient(at 85% 9%, #db48d1 0px, transparent 50%);
+  animation: meshGradientAnimation 5s infinite linear;
+}
+
+@keyframes meshGradientAnimation {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
