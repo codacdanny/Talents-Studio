@@ -98,14 +98,19 @@ $currentPercentage: 0;
   justify-content: center;
   background-color: #000;
   background-image: // skeuomorphism anyone?
-    radial-gradient(rgba(#fff, 0.125), rgba(#fff, 0)),
-    linear-gradient(to bottom, #000, #000 2px, #111 3px);
+    // radial-gradient(rgba(#fff, 0.125), rgba(#fff, 0)),
+    // linear-gradient(to bottom, #000, #000 2px, #111 3px);
+    radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
+    radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
+    radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
+    radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
+    radial-gradient(at 85% 9%, #db48d1 0px, transparent 50%);
   background-repeat: repeat-y;
   background-position: center center;
   background-size: cover, 100% 3px;
   font-size: calc(40px + 2vw);
   font-family: "VT323", monospace, sans-serif !important;
-  color: #3f3; // hacker green
+  color: #ffffff; // hacker green
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &::after {
@@ -118,78 +123,11 @@ $currentPercentage: 0;
     display: inline-block;
     padding-right: 3px;
     padding-right: calc(3px + 0.1vw);
-    border-right: 10px solid rgba(#3f3, 0.75);
-    border-right: calc(1.1vw + 4px) solid rgba(#3f3, 0.75);
+    border-right: 10px solid rgba(#ffffff, 0.75);
+    border-right: calc(1.1vw + 4px) solid rgba(#ffffff, 0.75);
     text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
     white-space: nowrap;
     animation: typed #{$durTotal + "s"} linear 2.5s 1, beam-blink 1s infinite;
-  }
-}
-
-.wavy {
-  position: relative;
-
-  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
-  background: #1d1d1d;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.wavy span {
-  position: relative;
-  display: inline-block;
-  color: #3f3;
-  font-size: 6rem;
-  letter-spacing: 40px;
-  text-transform: uppercase;
-  animation: animate 1.5s ease-in-out infinite;
-  animation-delay: calc(0.1s * var(--i));
-}
-@keyframes animate {
-  20% {
-    transform: translateY(-20px);
-  }
-  40% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-.anime1 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  // animation: animate1 6s infinite;
-  // transition: all 0.1s ease-in-out;
-
-  animation: animate1 4s 1 forwards;
-  transform-origin: center; /* Set the transform origin for smoother scaling */
-  transition: all 2s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-@keyframes animate1 {
-  0% {
-    // transform: scale(0.8);
-    opacity: 1;
-  }
-
-  50% {
-    // transform: scale(
-    //   1.05
-    // ); /* Use a slightly larger scale for a smoother effect */
-    opacity: 1;
-  }
-
-  100% {
-    // transform: scale(0.5);
-    opacity: 0;
   }
 }
 
@@ -238,10 +176,10 @@ $currentPercentage: 0;
 
 @keyframes animate3 {
   0% {
-    opacity: 0.2;
+    opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 1;
   }
   100% {
     opacity: 1;
