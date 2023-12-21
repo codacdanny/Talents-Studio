@@ -97,10 +97,7 @@ $currentPercentage: 0;
   align-items: center;
   justify-content: center;
   background-color: #000;
-  background-image: // skeuomorphism anyone?
-    // radial-gradient(rgba(#fff, 0.125), rgba(#fff, 0)),
-    // linear-gradient(to bottom, #000, #000 2px, #111 3px);
-    radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
+  background-image: radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
     radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
     radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
     radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
@@ -147,15 +144,12 @@ $currentPercentage: 0;
 
 @keyframes animate2 {
   0% {
-    // transform: scale(0.7);
     opacity: 1;
   }
   50% {
-    // transform: scale(1.05); /* Zoom-in to scale 1.05 for anime2 */
     opacity: 1;
   }
   100% {
-    // transform: scale(1); /* Ensure anime2 ends at scale 1 */
     opacity: 1;
   }
 }
@@ -194,7 +188,7 @@ $currentPercentage: 0;
   z-index: -1;
   background-size: 250%;
 
-  background-image: radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
+  background-image: radial-gradient(at 1% 30%, #4847db 0px, transparent 50%),
     radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
     radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
     radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
