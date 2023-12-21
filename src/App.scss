@@ -127,7 +127,7 @@ $currentPercentage: 0;
     border-right: calc(1.1vw + 4px) solid rgba(#ffffff, 0.75);
     text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
     white-space: nowrap;
-    animation: typed #{$durTotal + "s"} linear 2.5s 1, beam-blink 1s infinite;
+    animation: typed #{$durTotal + "s"} linear 0s 1, beam-blink 1s infinite;
   }
 }
 
@@ -142,7 +142,7 @@ $currentPercentage: 0;
   animation: animate2 10.5s 1 linear;
   transform-origin: center;
   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation-delay: 2s;
+  animation-delay: 0s;
 }
 
 @keyframes animate2 {
