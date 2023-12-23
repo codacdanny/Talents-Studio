@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
             </Flex>
             <Image
               src={hero}
-              boxSize="40vw"
+              boxSize="fit-content"
               objectFit="cover"
               alt="hero image"
               bgColor="transparent"

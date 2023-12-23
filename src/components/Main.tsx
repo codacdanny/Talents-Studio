@@ -1,22 +1,108 @@
 import { Box, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { useEffect } from "react";
+import runner from "../assets/Running man.svg";
+
+interface InfoCardProps {
+  title: string;
+  value: string;
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
+  return (
+    <Flex
+      flexDirection="column"
+      gap=".6rem"
+      fontWeight="600"
+      alignItems="center">
+      <Text fontSize="3rem">{value}</Text>
+      <Text fontSize="1.25rem">{title}</Text>
+    </Flex>
+  );
+};
 
 const Main = () => {
+  useEffect(() => {
+    const NUMBER_OF_STARS = 40;
+
+    const addPulse = (element: HTMLElement): void => {
+      const pulseTime: number = Math.random() * 4000;
+      setTimeout(() => {
+        element.classList.add("pulse");
+      }, pulseTime);
+    };
+
+    const mainBox = document.querySelector(".main");
+
+    if (mainBox) {
+      for (let jess = 0; jess < NUMBER_OF_STARS; jess++) {
+        const aStar = document.createElement("div");
+        aStar.className = "star";
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const x = Math.random() * windowWidth;
+        aStar.style.left = x + "px";
+        mainBox.appendChild(aStar);
+
+        const y = Math.random() * windowHeight;
+        aStar.style.top = y + "px";
+
+        addPulse(aStar);
+      }
+    }
+  }, []);
+
   return (
-    <Box>
-      <Flex>
-        <Image />
-        <Box>
-          <Text></Text>
-          <Text></Text>
-          <Text></Text>
-        </Box>
-        <SimpleGrid>
-          <Flex flexDirection="column"></Flex>
-          <Flex flexDirection="column"></Flex>
-          <Flex flexDirection="column"></Flex>
-          <Flex flexDirection="column"></Flex>
-        </SimpleGrid>
+    <Box
+      className="main"
+      color="#ffffff"
+      height="100%"
+      padding="3rem 3rem"
+      overflow="hidden">
+      <Flex gap="3rem" color="#F8F2FC" alignItems="center">
+        <Image
+          src={runner}
+          boxSize="fit-content"
+          objectFit="cover"
+          alt="runner image"
+          bgColor="transparent"
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="500"
+          data-aos-duration="500"
+        />
+        <Flex flexDir="column" gap=".5rem">
+          <Text fontSize="2rem" fontWeight="600">
+            With us,
+          </Text>
+          <Text fontSize="3rem" fontWeight="500">
+            Finding a career path promises to be easy
+          </Text>
+          <Text fontSize="1rem" fontWeight="400">
+            In most beginner stories, you find that one thing is common, the
+            moment of confusion. Here, because we care about your progress, we
+            have provided very streamlined courses with a platform that promises
+            ease of use.
+          </Text>
+          <SimpleGrid columns={2} spacing={25} paddingX="3rem">
+            <InfoCard title="Competent facilitators" value="200+" />
+            <InfoCard title="Professional videos" value="100+" />
+            <InfoCard title="Students" value="10k+" />
+            <InfoCard title="Sponsors" value="20+" />
+          </SimpleGrid>
+        </Flex>
       </Flex>
+      {Array.from({ length: 50 }, (_, index) => (
+        <Box
+          key={index}
+          className="star"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+        />
+      ))}
     </Box>
   );
 };
