@@ -1,6 +1,7 @@
 import { Box, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import runner from "../assets/Running man.svg";
+import Projects from "./Projects";
 
 interface InfoCardProps {
   title: string;
@@ -22,7 +23,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
 
 const Main = () => {
   useEffect(() => {
-    const NUMBER_OF_STARS = 40;
+    const NUMBER_OF_STARS = 80;
 
     const addPulse = (element: HTMLElement): void => {
       const pulseTime: number = Math.random() * 4000;
@@ -59,7 +60,8 @@ const Main = () => {
       color="#ffffff"
       height="100%"
       padding="3rem 3rem"
-      overflow="hidden">
+      overflow="hidden"
+      zIndex="50">
       <Flex gap="3rem" color="#F8F2FC" alignItems="center">
         <Image
           src={runner}
@@ -93,7 +95,7 @@ const Main = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
-      {Array.from({ length: 50 }, (_, index) => (
+      {Array.from({ length: 80 }, (_, index) => (
         <Box
           key={index}
           className="star"
@@ -103,6 +105,7 @@ const Main = () => {
           }}
         />
       ))}
+      <Projects/>
     </Box>
   );
 };

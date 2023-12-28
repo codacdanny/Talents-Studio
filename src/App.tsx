@@ -16,6 +16,7 @@ function App() {
       <Box className="bg">
         <Hero />
         <Main />
+       
       </Box>
     </>
   );
