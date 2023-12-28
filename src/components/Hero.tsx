@@ -16,13 +16,8 @@ const Hero: React.FC = () => {
           <Box className="introID" height="100svh" />
         </Box>
       </Box>
-      <Box className="bgGradient">
-        <Box
-          color="#ffffff"
-          className="hero"
-          padding="1rem 3rem"
-          height="100%"
-          bgGradient="radial-gradient(at 1% 60%, #4847db 0px, transparent 50%), radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%), radial-gradient(at 77% 66%, #5148db 0px, transparent 50%), radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%), radial-gradient(at 85% 9%, #db48d1 0px, transparent 50%)">
+      <Box>
+        <Box color="#ffffff" className="hero" padding="1rem 3rem" height="100%">
           <Flex as="nav" justifyContent="space-between" alignItems="center">
             <Heading as="h3">Talents</Heading>
             <List
