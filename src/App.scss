@@ -135,8 +135,9 @@ $currentPercentage: 0;
   top: 0;
   left: 0;
   opacity: 0;
+  visibility: hidden;
   z-index: 90;
-  animation: animate2 10.5s 1 linear;
+  animation: animate2 10.8s 1 linear;
   transform-origin: center;
   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
   animation-delay: 0s;
@@ -145,12 +146,15 @@ $currentPercentage: 0;
 @keyframes animate2 {
   0% {
     opacity: 1;
+    visibility: visible;
   }
-  50% {
+  90% {
     opacity: 1;
   }
+
   100% {
-    opacity: 1;
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -162,10 +166,10 @@ $currentPercentage: 0;
   top: 0;
   left: 0;
 
-  animation: animate3 12s 1 linear;
-  transform-origin: center;
-  transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation-delay: 13s;
+  // animation: animate3 12s 1 linear;
+  // transform-origin: center;
+  // transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
+  // animation-delay: 13s;
 }
 
 @keyframes animate3 {
@@ -192,6 +196,7 @@ $currentPercentage: 0;
 
 .main {
   position: relative;
+  z-index: 90;
 }
 @keyframes stars {
   0% {
@@ -241,15 +246,7 @@ $currentPercentage: 0;
   }
 }
 
-// .bg {
-//   background-color: hsla(240, 69%, 13%, 1);
-//   background-image: radial-gradient(
-//       at 14% 14%,
-//       hsla(257, 58%, 19%, 1) 0px,
-//       transparent 50%
-//     ),
-//     radial-gradient(at 22% 53%, hsla(267, 49%, 19%, 1) 0px, transparent 50%),
-//     radial-gradient(at 17% 82%, hsla(319, 7%, 22%, 1) 0px, transparent 50%),
-//     radial-gradient(at 71% 81%, hsla(269, 46%, 64%, 1) 0px, transparent 50%),
-//     radial-gradient(at 84% 29%, hsla(334, 43%, 46%, 1) 0px, transparent 50%);
-// }
+.image-container:hover .skills-list {
+  opacity: 1;
+  visibility: visible;
+}
