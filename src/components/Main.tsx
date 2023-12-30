@@ -5,7 +5,7 @@ import Projects from "./Projects";
 
 interface InfoCardProps {
   title: string;
-  value: string;
+  value: number;
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
@@ -88,10 +88,10 @@ const Main = () => {
             ease of use.
           </Text>
           <SimpleGrid columns={2} spacing={25} paddingX="3rem">
-            <InfoCard title="Competent facilitators" value="200+" />
-            <InfoCard title="Professional videos" value="100+" />
-            <InfoCard title="Students" value="10k+" />
-            <InfoCard title="Sponsors" value="20+" />
+            <InfoCard title="Competent facilitators" value={200} />
+            <InfoCard title="Professional videos" value={100} />
+            <InfoCard title="Students" value={10} />
+            <InfoCard title="Sponsors" value={20} />
           </SimpleGrid>
         </Flex>
       </Flex>
@@ -105,7 +105,7 @@ const Main = () => {
           }}
         />
       ))}
-      <Projects/>
+      <Projects />
     </Box>
   );
 };

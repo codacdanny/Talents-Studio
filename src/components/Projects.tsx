@@ -34,7 +34,7 @@ const Card = ({
   //   // Add logic to hide the list of concepts
   // };
   return (
-    <Flex flexDirection="column" alignItems="center" gap="1rem">
+    <Flex flexDirection="column" alignItems="center" gap="2rem">
       <Box position="relative" className="image-container">
         <Image
           src={image}
@@ -144,6 +144,9 @@ const Projects = () => {
           />
         ))}
       </ScrollCarousel>
+      <Heading textAlign="center" paddingY="3rem">
+        What Our Students Have Built
+      </Heading>
     </Box>
   );
 };
