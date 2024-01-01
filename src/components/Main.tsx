@@ -1,7 +1,9 @@
-import { Box, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import runner from "../assets/Running man.svg";
 import Projects from "./Projects";
+import Lottie from "react-lottie";
+import animationData from "../assets/animate.json";
 
 interface InfoCardProps {
   title: string;
@@ -53,6 +55,15 @@ const Main = () => {
       }
     }
   }, []);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <Box
@@ -106,6 +117,12 @@ const Main = () => {
         />
       ))}
       <Projects />
+      <Box>
+        <Heading> Help us connect with you</Heading>
+        <Box>
+          <Lottie options={defaultOptions} height={400} width={800} />
+        </Box>
+      </Box>
     </Box>
   );
 };
