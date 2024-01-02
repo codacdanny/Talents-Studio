@@ -58,7 +58,7 @@ const Main = () => {
 
   const defaultOptions = {
     loop: true,
-    autoplay: true,
+    autoplay: false,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -117,12 +117,11 @@ const Main = () => {
         />
       ))}
       <Projects />
-      <Box>
+      <Flex alignItems="center" flexDirection="column">
         <Heading> Help us connect with you</Heading>
-        <Box>
-          <Lottie options={defaultOptions} height={400} width={800} />
-        </Box>
-      </Box>
+
+        <Lottie options={defaultOptions} height={300} width={400} />
+      </Flex>
     </Box>
   );
 };
