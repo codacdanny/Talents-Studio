@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import { useEffect } from "react";
 import runner from "../assets/Running man.svg";
 import Projects from "./Projects";
@@ -58,7 +66,7 @@ const Main = () => {
 
   const defaultOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
@@ -117,11 +125,25 @@ const Main = () => {
         />
       ))}
       <Projects />
-      <Flex alignItems="center" flexDirection="column">
-        <Heading> Help us connect with you</Heading>
+      <Box>
+        <Heading marginY="3rem" textAlign="center">
+          {" "}
+          Help us connect with you
+        </Heading>
+        <Flex width="100%" alignItems="center" gap="6rem">
+          <Text width="40%" fontSize="1.5rem" fontWeight="400">
+            This helps us keep in touch with you. Do kindly note that any
+            infomation sent would be on a need-to-know basis. Also, further
+            stages of the admission process would be communicated through the
+            medium.
+          </Text>
+          <Flex flexDirection="column" gap="2rem" width="50%">
+            <Lottie options={defaultOptions} height={300} width={400} />
 
-        <Lottie options={defaultOptions} height={300} width={400} />
-      </Flex>
+            <Button borderRadius="20px">Send A message</Button>
+          </Flex>
+        </Flex>
+      </Box>
     </Box>
   );
 };
