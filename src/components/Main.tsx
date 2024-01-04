@@ -76,12 +76,12 @@ const Main = () => {
   return (
     <Box
       className="main"
-      color="#ffffff"
+      color="#F8F2FC"
       height="100%"
       padding="3rem 3rem"
       overflow="hidden"
-      zIndex="50">
-      <Flex gap="3rem" color="#F8F2FC" alignItems="center">
+      marginBottom="3rem">
+      <Flex gap="3rem" alignItems="center">
         <Image
           src={runner}
           boxSize="fit-content"
