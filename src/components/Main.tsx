@@ -140,7 +140,7 @@ const Main = () => {
           <Flex flexDirection="column" gap="2rem" width="50%">
             <Lottie options={defaultOptions} height={300} width={400} />
 
-            <Button borderRadius="20px">Send A message</Button>
+            <Button borderRadius="20px">Send a message</Button>
           </Flex>
         </Flex>
       </Box>
