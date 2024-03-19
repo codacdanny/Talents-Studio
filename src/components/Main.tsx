@@ -1,35 +1,10 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  Image,
-  SimpleGrid,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
-import runner from "../assets/Running man.svg";
+
 import Projects from "./Projects";
 import Lottie from "react-lottie";
 import animationData from "../assets/animate.json";
-
-interface InfoCardProps {
-  title: string;
-  value: number;
-}
-
-const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
-  return (
-    <Flex
-      flexDirection="column"
-      gap=".6rem"
-      fontWeight="600"
-      alignItems="center">
-      <Text fontSize="3rem">{value}</Text>
-      <Text fontSize="1.25rem">{title}</Text>
-    </Flex>
-  );
-};
+import About from "./About";
 
 const Main = () => {
   useEffect(() => {
@@ -81,39 +56,8 @@ const Main = () => {
       padding="3rem 3rem"
       overflow="hidden"
       marginBottom="3rem">
-      <Flex gap="3rem" alignItems="center">
-        <Image
-          src={runner}
-          boxSize="fit-content"
-          objectFit="cover"
-          alt="runner image"
-          bgColor="transparent"
-          data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
-          data-aos-duration="500"
-        />
-        <Flex flexDir="column" gap=".5rem">
-          <Text fontSize="2rem" fontWeight="600">
-            With us,
-          </Text>
-          <Text fontSize="3rem" fontWeight="500">
-            Finding a career path promises to be easy
-          </Text>
-          <Text fontSize="1rem" fontWeight="400">
-            In most beginner stories, you find that one thing is common, the
-            moment of confusion. Here, because we care about your progress, we
-            have provided very streamlined courses with a platform that promises
-            ease of use.
-          </Text>
-          <SimpleGrid columns={2} spacing={25} paddingX="3rem">
-            <InfoCard title="Competent facilitators" value={200} />
-            <InfoCard title="Professional videos" value={100} />
-            <InfoCard title="Students" value={10} />
-            <InfoCard title="Sponsors" value={20} />
-          </SimpleGrid>
-        </Flex>
-      </Flex>
+      <About />
+      <Flex gap="3rem" alignItems="center"></Flex>
       {Array.from({ length: 80 }, (_, index) => (
         <Box
           key={index}

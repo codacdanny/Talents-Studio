@@ -61,7 +61,7 @@ const Projects = () => {
   return (
     <Box>
       <Heading textAlign="center" marginY="2rem">
-        Projects
+        Our Tools
       </Heading>
       <Box bgColor="" padding="1rem">
         <Text>
