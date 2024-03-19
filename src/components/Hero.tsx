@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
     <>
       <Box position="relative" height="100vh" overflow="hidden">
         <Box className="anime2">
-          <Box className="introID" height="100svh" />
+          <Box className="introID" minHeight="100svh" />
         </Box>
       </Box>
       <Box>
@@ -21,6 +21,8 @@ const Hero: React.FC = () => {
           <Flex as="nav" justifyContent="space-between" alignItems="center">
             <Heading as="h3">Talents</Heading>
             <List
+              fontSize="1.4rem"
+              fontWeight="400"
               display="flex"
               justifyContent="space-around"
               width="40vw"

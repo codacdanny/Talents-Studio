@@ -1,3 +1,4 @@
+@use "sass:math";
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 // Love dynamically typed text? You're gonna love this
 // Edit these strings to see them typed on the screen:
@@ -5,9 +6,9 @@ $strings: ("WELCOME TO TALENTS HUNT STUDIO" "LET'S HUNT 🏹");
 
 // now for some timing (in seconds)
 $durCharFwd: 0.1; // character typed
-$durFullGap: 2; // time between typed/delete
+$durFullGap: 0.1; // time between typed/delete
 $durCharBwd: 0.08; // character deleted
-$durDoneGap: 1; // time between strings
+$durDoneGap: 0.1; // time between strings
 
 // initializing some variables and functions ✊🏼
 $charCount: 0;
@@ -39,8 +40,10 @@ $durTotal: 0;
       $durFullGap +
       ($durCharBwd * ($letter - str-length(nth($strings, $string))));
   }
-  @return ($time / $durTotal * 100 + $modifier) + "%";
+  // Use math.div() to perform division
+  @return math.div($time, $durTotal) * 100 + $modifier + "%";
 }
+
 $currentPercentage: 0;
 // now THIS is where the magic happens... ✨
 @keyframes typed {
@@ -107,11 +110,11 @@ $currentPercentage: 0;
   background-size: cover, 100% 3px;
   font-size: calc(40px + 2vw);
   font-family: "VT323", monospace, sans-serif !important;
-  color: #ffffff; // hacker green
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &::after {
-    content: "​"; // zero-width space to retain element height
+    content: "​";
     position: relative;
     top: -13px;
     @media (max-width: 575px) {
@@ -124,6 +127,7 @@ $currentPercentage: 0;
     border-right: calc(1.1vw + 4px) solid rgba(#ffffff, 0.75);
     text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
     white-space: nowrap;
+
     animation: typed #{$durTotal + "s"} linear 0s 1, beam-blink 1s infinite;
   }
 }
@@ -132,12 +136,13 @@ $currentPercentage: 0;
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow-y: hidden !important;
   top: 0;
   left: 0;
   opacity: 0;
   visibility: hidden;
   z-index: 90;
-  animation: animate2 10.8s 1 linear;
+  animation: animate2 7.2s 1 linear;
   transform-origin: center;
   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
   animation-delay: 0s;
@@ -165,11 +170,6 @@ $currentPercentage: 0;
   height: 100%;
   top: 0;
   left: 0;
-
-  // animation: animate3 12s 1 linear;
-  // transform-origin: center;
-  // transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
-  // animation-delay: 13s;
 }
 
 @keyframes animate3 {
@@ -183,16 +183,6 @@ $currentPercentage: 0;
     opacity: 1;
   }
 }
-
-// .bgGradient {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   z-index: -1;
-//   background-size: 250%;
-// }
 
 .main {
   position: relative;
@@ -271,5 +261,35 @@ $currentPercentage: 0;
   }
   to {
     --num: 100;
+  }
+}
+
+.main__bg {
+  background-image: linear-gradient(-60deg, #404258 50%, #6b728e 50%);
+  animation: slide 3s ease-in-out infinite alternate;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.layer1 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.layer2 {
+  animation-duration: 5s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
   }
 }

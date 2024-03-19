@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import reactLogo from "../assets/react.png";
 import vuejs from "../assets/vueJS.png";
-import terminal from "../assets/terminal.png";
 import html from "../assets/html.png";
 import javascript from "../assets/javascript.png";
 import mongoDB from "../assets/mongoDB.png";
@@ -11,7 +10,7 @@ import flutter from "../assets/flutter.png";
 import firebase from "../assets/firebase.png";
 import css3 from "../assets/css3.png";
 import github from "../assets/github.png";
-import ardruino from "../assets/arduino5804.jpg";
+import ardruino from "../assets/arduino.png";
 import aws from "../assets/aws_icon.png";
 import azure from "../assets/azure_icon.png";
 import cpp from "../assets/cpp.png";
@@ -21,7 +20,7 @@ import postgreSQL from "../assets/PostgreSQL_.png";
 import python from "../assets/python.png";
 import sql from "../assets/sql.png";
 import typescript from "../assets/typescript_icon.png";
-import android from "../assets/android studio.png";
+import android from "../assets/android-studio.svg";
 import vscode from "../assets/vscode.png";
 import angular from "../assets/AngularJS.svg";
 
@@ -89,8 +88,9 @@ const Projects = () => {
               bgColor="transparent"
               width="110px"
               height="auto"
-              bg="#eee"
+              bgGradient="linear-gradient(-60deg, #c39dcab3 50%, #d2cacecc 50%);"
               padding="1rem"
+              borderRadius="1rem"
             />
           ))}
         </Flex>
