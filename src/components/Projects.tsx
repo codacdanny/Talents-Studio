@@ -59,18 +59,18 @@ const imageData: ImageData[] = [
 
 const Projects = () => {
   return (
-    <Box>
+    <Box marginY="9rem">
       <Heading textAlign="center" marginY="2rem">
         Our Tools
       </Heading>
       <Box bgColor="" padding="1rem">
-        <Text>
+        <Text fontSize="1.2rem">
           Here at Talents Hunt Studio we train students in differents tech
           niches ranging from{" "}
           <span
             style={{
               fontWeight: "700",
-              fontSize: "1.2rem",
+              fontSize: "1.5rem",
             }}>
             FrontEnd Development, Mobile Development, Backend Development, Micro
             Processors and Devops Engineering.

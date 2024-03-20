@@ -57,7 +57,7 @@ const Main = () => {
       overflow="hidden"
       marginBottom="3rem">
       <About />
-      <Flex gap="3rem" alignItems="center"></Flex>
+
       {Array.from({ length: 80 }, (_, index) => (
         <Box
           key={index}
@@ -69,9 +69,8 @@ const Main = () => {
         />
       ))}
       <Projects />
-      <Box>
-        <Heading marginY="3rem" textAlign="center">
-          {" "}
+      <Box marginY="3rem">
+        <Heading marginY="2rem" textAlign="center">
           Help us connect with you
         </Heading>
         <Flex width="100%" alignItems="center" gap="6rem">

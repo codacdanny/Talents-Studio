@@ -25,7 +25,7 @@ const About = () => {
         What we Do
       </Heading>
       <SimpleGrid columns={2} spacing={10} rowGap="8rem" alignItems="center">
-        <Box>
+        <Box className="bounce">
           {" "}
           <Image
             src={runner}
@@ -40,6 +40,7 @@ const About = () => {
           />
         </Box>
         <Flex
+          className="bounce"
           padding="1rem 1.5rem"
           bgColor="purple"
           fontSize="1.2rem"
@@ -57,6 +58,7 @@ const About = () => {
           voluptates quae? Soluta veniam maxime nam corrupti?
         </Flex>
         <Flex
+          className="bounce"
           padding="1rem 1.5rem"
           bgColor="purple"
           fontSize="1.2rem"
@@ -76,6 +78,7 @@ const About = () => {
         <Box>
           {" "}
           <Image
+            className="bounce"
             src={runner}
             boxSize="fit-content"
             objectFit="cover"
@@ -88,6 +91,7 @@ const About = () => {
           />
         </Box>
         <Image
+          className="bounce"
           src={runner}
           boxSize="fit-content"
           objectFit="cover"
@@ -98,7 +102,7 @@ const About = () => {
           data-aos-offset="500"
           data-aos-duration="500"
         />
-        <Flex flexDir="column" gap=".5rem">
+        <Flex flexDir="column" gap=".5rem" className="bounce">
           <Text fontSize="2rem" fontWeight="600">
             With us,
           </Text>
