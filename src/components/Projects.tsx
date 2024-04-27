@@ -23,6 +23,7 @@ import typescript from "../assets/typescript_icon.png";
 import android from "../assets/android-studio.svg";
 import vscode from "../assets/vscode.png";
 import angular from "../assets/AngularJS.svg";
+import Card from "./Card";
 
 type ImageData = {
   name: string;
@@ -78,7 +79,7 @@ const Projects = () => {
           Some of the tools our students master how to use are:
         </Text>
         <Flex wrap="wrap" gap="4rem" justifyContent="center" paddingY="3rem">
-          {imageData.map((image) => (
+          {/* {imageData.map((image) => (
             <Image
               key={image.name}
               src={image.src}
@@ -92,7 +93,89 @@ const Projects = () => {
               padding="1rem"
               borderRadius="1rem"
             />
-          ))}
+          ))} */}
+          <Card
+            bgColors="#164858"
+            boxShadows="0px 10px 25px 0px #CCD9FF"
+            cardTitle="Lite Class"
+            cardPrice="N45,000"
+            weeks="6 weeks"
+            cardText="Features for individuals who need quick knowledge of UI design."
+            listOne="UI (User Interface) design."
+            listTwo="What is UI design?"
+            listThree="Typography, colours, layout, hierarchy, whitespace, icons, balance and alignment.?"
+            listFour="Wireframes: creating standard low fidelity and high fidelity wireframes."
+            listFive="Interpreting customer briefs and converting it to great designs."
+            listSix="Learn how to design landing pages, mobile apps and dashboard screens."
+            listSeven="Advanced testing and prototyping."
+            listEight="Certificate of Completion."
+            isLast={false}
+          />
+          <Card
+            bgColors="#164858"
+            boxShadows="0px 10px 25px 0px #CCD9FF"
+            cardTitle="Advance Class"
+            cardPrice="N95,000"
+            weeks="9 weeks"
+            cardText="Features for individuals who who need advanced knowledge of UI design"
+            listOne="Lite Class"
+            listTwo="What is UX design?"
+            listThree="User research methods: qualitative & quantitative research, interpreting user feedback to designs"
+            listFour="Maps: empathy map, customer journey map and experience map."
+            listFive="Advanced testing and prototyping"
+            listSix="Advanced testing and prototyping"
+            listSeven="Job search support and guidance"
+            listEight="Exposure to design tips and tricks - shortcuts and resources."
+            isLast={false}
+          />
+          <Card
+            bgColors="#164858"
+            boxShadows="0px 10px 25px 0px #CCD9FF"
+            cardTitle="Premium Class"
+            cardPrice="N250,000"
+            weeks="3 Months"
+            cardText="Features for individuals who need premium knowledge of UI design."
+            listOne="Advance Class"
+            listTwo="Learn how to use PRO design tools like Miro, Notion, Adobe illustrator, Figjam etc"
+            listThree="Exposure to design tips and tricks - shortcuts and resources"
+            listFour="Mentorship with a Senior Designer."
+            listFive="Work on complex case studies and projects"
+            listSix="Job search support and guidance"
+            listSeven="Certificate of Completion."
+            isLast={true}
+          />
+          <Card
+            bgColors="#164858"
+            boxShadows="0px 10px 25px 0px #CCD9FF"
+            cardTitle="Premium Class"
+            cardPrice="N250,000"
+            weeks="3 Months"
+            cardText="Features for individuals who need premium knowledge of UI design."
+            listOne="Advance Class"
+            listTwo="Learn how to use PRO design tools like Miro, Notion, Adobe illustrator, Figjam etc"
+            listThree="Exposure to design tips and tricks - shortcuts and resources"
+            listFour="Mentorship with a Senior Designer."
+            listFive="Work on complex case studies and projects"
+            listSix="Job search support and guidance"
+            listSeven="Certificate of Completion."
+            isLast={true}
+          />
+          <Card
+            bgColors="#164858"
+            boxShadows="0px 10px 25px 0px #CCD9FF"
+            cardTitle="Premium Class"
+            cardPrice="N250,000"
+            weeks="3 Months"
+            cardText="Features for individuals who need premium knowledge of UI design."
+            listOne="Advance Class"
+            listTwo="Learn how to use PRO design tools like Miro, Notion, Adobe illustrator, Figjam etc"
+            listThree="Exposure to design tips and tricks - shortcuts and resources"
+            listFour="Mentorship with a Senior Designer."
+            listFive="Work on complex case studies and projects"
+            listSix="Job search support and guidance"
+            listSeven="Certificate of Completion."
+            isLast={true}
+          />
         </Flex>
       </Box>
     </Box>
