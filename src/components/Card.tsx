@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({
       }}
       className="circle"
       flexDir="column"
-      maxW="380px"
+      maxW="300px"
       height="95%"
       borderRadius="12px">
       <Flex

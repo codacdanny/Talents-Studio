@@ -147,23 +147,7 @@ const Projects = () => {
           <Card
             bgColors="#164858"
             boxShadows="0px 10px 25px 0px #CCD9FF"
-            cardTitle="Premium Class"
-            cardPrice="N250,000"
-            weeks="3 Months"
-            cardText="Features for individuals who need premium knowledge of UI design."
-            listOne="Advance Class"
-            listTwo="Learn how to use PRO design tools like Miro, Notion, Adobe illustrator, Figjam etc"
-            listThree="Exposure to design tips and tricks - shortcuts and resources"
-            listFour="Mentorship with a Senior Designer."
-            listFive="Work on complex case studies and projects"
-            listSix="Job search support and guidance"
-            listSeven="Certificate of Completion."
-            isLast={true}
-          />
-          <Card
-            bgColors="#164858"
-            boxShadows="0px 10px 25px 0px #CCD9FF"
-            cardTitle="Premium Class"
+            cardTitle="  Class"
             cardPrice="N250,000"
             weeks="3 Months"
             cardText="Features for individuals who need premium knowledge of UI design."
