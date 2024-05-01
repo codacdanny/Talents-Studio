@@ -1,13 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
-import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
+import { Box, Button, Flex, List, ListItem, Text } from "@chakra-ui/react";
 
 interface CardProps {
   cardTitle: string;
@@ -20,11 +11,7 @@ interface CardProps {
   listTwo: string;
   listThree: string;
   listFour: string;
-  listFive: string;
-  listSix: string;
-  listSeven: string;
-  listEight?: string;
-  isLast: boolean;
+  style?: React.CSSProperties; // Add style prop
 }
 const Card: React.FC<CardProps> = ({
   cardTitle,
@@ -37,40 +24,33 @@ const Card: React.FC<CardProps> = ({
   listTwo,
   listThree,
   listFour,
-  listFive,
-  listSix,
-  listSeven,
-  listEight,
-  isLast,
+  style,
 }) => {
   return (
     <Flex
+      style={style}
       data-aos="zoom-in-up"
-      bgColor={{
-        base: "#164858",
-        lg: "transparent",
-      }}
+      // bgColor={{
+      //   base: "#164858",
+      //   lg: "transparent",
+      // }}
       _hover={{
         boxShadow: boxShadows,
       }}
-      className="circle"
+      className="circle glass"
       flexDir="column"
       maxW="300px"
-      height="95%"
+      height="100%"
       borderRadius="12px">
       <Flex
         textColor={{
           base: "#fff",
-          lg: "#000",
         }}
-        _hover={{
-          textColor: "#fff",
-          transition: "all 2.5s ease-out",
-        }}
+        _hover={{}}
         p={{
           base: ".7rem .7rem",
           mini: "1rem",
-          lg: "1rem 1.7rem",
+          lg: "2rem 1.7rem",
         }}
         gap="1.5rem"
         textAlign="left"
@@ -91,6 +71,27 @@ const Card: React.FC<CardProps> = ({
             {weeks}
           </span>
         </Text>
+
+        <List
+          spacing={3}
+          mb="2.5rem"
+          fontWeight="400"
+          fontSize="1rem"
+          justifyContent="center">
+          <ListItem display="flex" gap=".3rem" alignItems="center">
+            {listOne}
+          </ListItem>
+          <ListItem display="flex" gap=".3rem" alignItems="center">
+            {listTwo}
+          </ListItem>
+          <ListItem display="flex" gap=".3rem" alignItems="center">
+            {listThree}
+          </ListItem>
+
+          <ListItem display="flex" gap=".3rem" alignItems="center">
+            {listFour}
+          </ListItem>
+        </List>
         <Button
           as="a"
           href="https://wa.me/message/3CZOICXDXHL4G1"
@@ -99,106 +100,6 @@ const Card: React.FC<CardProps> = ({
           borderRadius="4px">
           Get Started Now
         </Button>
-        <List
-          spacing={3}
-          mb="2.5rem"
-          fontWeight="400"
-          fontSize="1rem"
-          justifyContent="center">
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              borderRadius="50%"
-              color="blue.300"
-            />
-            {listOne}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              color="blue.300"
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              borderRadius="50%"
-            />
-            {listTwo}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              borderRadius="50%"
-              color="blue.300"
-            />
-            {listThree}
-          </ListItem>
-
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              borderRadius="50%"
-              color="blue.300"
-            />
-            {listFour}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              color="blue.300"
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              borderRadius="50%"
-            />
-            {listFive}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={CheckIcon}
-              boxSize="5"
-              padding=".3rem"
-              bg="blue.100"
-              color="blue.300"
-              borderRadius="50%"
-            />
-            {listSix}
-          </ListItem>
-
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            <ListIcon
-              as={isLast ? CheckIcon : CloseIcon}
-              color={isLast ? "blue.300" : "black.200"}
-              bgColor={isLast ? "blue.100" : "none"}
-              boxSize="5"
-              padding=".3rem"
-              borderRadius="50%"
-            />
-            {listSeven}
-          </ListItem>
-          <ListItem
-            display={!isLast ? "flex" : "none"}
-            gap=".3rem"
-            alignItems="center">
-            <ListIcon
-              as={CloseIcon}
-              //bgColor="gray.100"
-              color="black.200 !important"
-              boxSize="5"
-              padding=".3rem"
-              borderRadius="50%"
-            />
-            {listEight}
-          </ListItem>
-        </List>
       </Flex>
       <Box bgColor={bgColors} className="wave" />
     </Flex>
