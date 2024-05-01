@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({
       borderRadius="12px">
       <Flex
         textColor={{
-          base: "#fff",
+          base: "#d4d4d4",
         }}
         _hover={{}}
         p={{
@@ -96,7 +96,7 @@ const Card: React.FC<CardProps> = ({
           as="a"
           href="https://wa.me/message/3CZOICXDXHL4G1"
           colorScheme="gray"
-          outline="1.5px solid #301446"
+          outline="none"
           borderRadius="4px">
           Get Started Now
         </Button>
