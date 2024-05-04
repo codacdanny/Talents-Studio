@@ -16,10 +16,10 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   cardTitle,
   cardText,
-  cardPrice,
-  boxShadows,
+  // cardPrice,
+  // boxShadows,
   bgColors,
-  weeks,
+  // weeks,
   listOne,
   listTwo,
   listThree,
@@ -34,35 +34,78 @@ const Card: React.FC<CardProps> = ({
       //   base: "#164858",
       //   lg: "transparent",
       // }}
-      _hover={{
-        boxShadow: boxShadows,
-      }}
-      className="circle glass"
-      flexDir="column"
-      maxW="300px"
-      height="100%"
+      // _hover={{
+      //   boxShadow: boxShadows,
+      // }}
+      // flexDir="column"
+      maxW="350px"
       borderRadius="12px">
       <Flex
         textColor={{
           base: "#d4d4d4",
         }}
-        _hover={{}}
         p={{
           base: ".7rem .7rem",
           mini: "1rem",
           lg: "2rem 1.7rem",
         }}
-        gap="1.5rem"
         textAlign="left"
-        flexDir="column"
-        justifyContent="space-around">
-        <Text fontSize="1.2rem" fontWeight="600">
-          {cardTitle}
-        </Text>
-        <Text fontSize="1rem" fontWeight="300">
-          {cardText}
-        </Text>
-        <Text fontSize="2rem">
+        // flexDir="column"
+        justifyContent="space-around"
+        className="card-container">
+        <Box
+          className="left-page"
+          p={{
+            base: ".7rem .7rem",
+            mini: "1rem",
+            lg: "2rem 1.7rem",
+          }}>
+          <Box className="page page-2 glass">
+            <List
+              spacing={3}
+              mb="2.5rem"
+              fontWeight="400"
+              fontSize="1rem"
+              justifyContent="center">
+              <ListItem display="flex" gap=".3rem" alignItems="center">
+                {listOne}
+              </ListItem>
+              <ListItem display="flex" gap=".3rem" alignItems="center">
+                {listTwo}
+              </ListItem>
+              <ListItem display="flex" gap=".3rem" alignItems="center">
+                {listThree}
+              </ListItem>
+
+              <ListItem display="flex" gap=".3rem" alignItems="center">
+                {listFour}
+              </ListItem>
+            </List>
+            <Button
+              as="a"
+              href="#"
+              colorScheme="gray"
+              outline="none"
+              borderRadius="4px">
+              Get Started Now
+            </Button>
+          </Box>
+        </Box>
+        <Box
+          className="right-page "
+          p={{
+            base: ".7rem .7rem",
+            mini: "1rem",
+            lg: "2rem 1.7rem",
+          }}>
+          <Box className="page page-3 glass">
+            <Text fontSize="1.2rem" fontWeight="600">
+              {cardTitle}
+            </Text>
+            <Text fontSize="1rem" fontWeight="300">
+              {cardText}
+            </Text>
+            {/* <Text fontSize="2rem">
           {cardPrice}/
           <span
             style={{
@@ -70,36 +113,9 @@ const Card: React.FC<CardProps> = ({
             }}>
             {weeks}
           </span>
-        </Text>
-
-        <List
-          spacing={3}
-          mb="2.5rem"
-          fontWeight="400"
-          fontSize="1rem"
-          justifyContent="center">
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            {listOne}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            {listTwo}
-          </ListItem>
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            {listThree}
-          </ListItem>
-
-          <ListItem display="flex" gap=".3rem" alignItems="center">
-            {listFour}
-          </ListItem>
-        </List>
-        <Button
-          as="a"
-          href="https://wa.me/message/3CZOICXDXHL4G1"
-          colorScheme="gray"
-          outline="none"
-          borderRadius="4px">
-          Get Started Now
-        </Button>
+        </Text> */}
+          </Box>
+        </Box>
       </Flex>
       <Box bgColor={bgColors} className="wave" />
     </Flex>
