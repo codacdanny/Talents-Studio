@@ -1,5 +1,16 @@
-import { Box, Button, Flex, List, ListItem, Text } from "@chakra-ui/react";
-
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  List,
+  ListItem,
+  Text,
+} from "@chakra-ui/react";
+import nextjs from "../assets/nextJS.png";
+import html from "../assets/html.png";
+import express from "../assets/expressJS.png";
+import css from "../assets/css3.png";
 interface CardProps {
   cardTitle: string;
   cardPrice: string;
@@ -27,19 +38,7 @@ const Card: React.FC<CardProps> = ({
   style,
 }) => {
   return (
-    <Flex
-      style={style}
-      data-aos="zoom-in-up"
-      // bgColor={{
-      //   base: "#164858",
-      //   lg: "transparent",
-      // }}
-      // _hover={{
-      //   boxShadow: boxShadows,
-      // }}
-      // flexDir="column"
-      maxW="350px"
-      borderRadius="12px">
+    <Flex style={style} data-aos="zoom-in-up" maxW="350px" borderRadius="12px">
       <Flex
         textColor={{
           base: "#d4d4d4",
@@ -53,6 +52,65 @@ const Card: React.FC<CardProps> = ({
         // flexDir="column"
         justifyContent="space-around"
         className="card-container">
+        <Box
+          className="right-page "
+          p={{
+            base: ".7rem .7rem",
+            mini: "1rem",
+            lg: "2rem 1.7rem",
+          }}>
+          <Box className="page glass" padding="1rem 2rem">
+            <Text
+              fontSize="1.5rem"
+              marginBottom="2rem"
+              textAlign="center"
+              fontWeight="600">
+              {cardTitle}
+            </Text>
+            <Text fontSize="1rem" fontWeight="300">
+              {cardText}
+            </Text>
+            <Flex>
+              <Image
+                src={nextjs}
+                alt="logo"
+                bgSize="cover"
+                height="4rem"
+                width="2rem"
+              />
+              <Image
+                src={html}
+                alt="logo"
+                bgSize="cover"
+                height="4rem"
+                width="2rem"
+              />
+              <Image
+                src={css}
+                alt="logo"
+                bgSize="cover"
+                height="4rem"
+                width="2rem"
+              />
+              <Image
+                src={express}
+                alt="logo"
+                bgSize="cover"
+                height="4rem"
+                width="2rem"
+              />
+            </Flex>
+            {/* <Text fontSize="2rem">
+          {cardPrice}/
+          <span
+            style={{
+              fontSize: "1.2rem",
+            }}>
+            {weeks}
+          </span>
+        </Text> */}
+          </Box>
+        </Box>
         <Box
           className="left-page"
           p={{
@@ -89,31 +147,6 @@ const Card: React.FC<CardProps> = ({
               borderRadius="4px">
               Get Started Now
             </Button>
-          </Box>
-        </Box>
-        <Box
-          className="right-page "
-          p={{
-            base: ".7rem .7rem",
-            mini: "1rem",
-            lg: "2rem 1.7rem",
-          }}>
-          <Box className="page page-3 glass">
-            <Text fontSize="1.2rem" fontWeight="600">
-              {cardTitle}
-            </Text>
-            <Text fontSize="1rem" fontWeight="300">
-              {cardText}
-            </Text>
-            {/* <Text fontSize="2rem">
-          {cardPrice}/
-          <span
-            style={{
-              fontSize: "1.2rem",
-            }}>
-            {weeks}
-          </span>
-        </Text> */}
           </Box>
         </Box>
       </Flex>
