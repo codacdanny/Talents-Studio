@@ -39,11 +39,11 @@ const Hero: React.FC = () => {
             alignItems="center">
             <Flex direction="column" width="55%" gap="2rem">
               <Heading as="h2" fontSize="5rem">
-                Get a feel of the <br /> best talents on <br /> the Internet
+                Find The Right Talents To Handle Your Tech Projects.
               </Heading>
               <Heading as="h3" fontSize="1rem">
-                A job well done drives projects exponientially. Finding the
-                right person might <br /> prove hardbut that has come to an end
+                Get the right dev or team to get your million-dollar idea to MVP
+                stage and beyond.
               </Heading>
               <Flex>
                 <Button borderRadius="20px"> Start your Journey</Button>
