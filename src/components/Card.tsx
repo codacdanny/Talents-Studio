@@ -7,10 +7,7 @@ import {
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import nextjs from "../assets/nextJS.png";
-import html from "../assets/html.png";
-import express from "../assets/expressJS.png";
-import css from "../assets/css3.png";
+
 interface CardProps {
   cardTitle: string;
   cardPrice: string;
@@ -18,6 +15,7 @@ interface CardProps {
   boxShadows: string;
   bgColors: string;
   weeks: string;
+  logos: string[];
   listOne: string;
   listTwo: string;
   listThree: string;
@@ -31,6 +29,7 @@ const Card: React.FC<CardProps> = ({
   // boxShadows,
   bgColors,
   // weeks,
+  logos,
   listOne,
   listTwo,
   listThree,
@@ -52,53 +51,30 @@ const Card: React.FC<CardProps> = ({
         // flexDir="column"
         justifyContent="space-around"
         className="card-container">
-        <Box
-          className="right-page "
-          p={{
-            base: ".7rem .7rem",
-            mini: "1rem",
-            lg: "2rem 1.7rem",
-          }}>
-          <Box className="page glass" padding="1rem 2rem">
-            <Text
-              fontSize="1.5rem"
-              marginBottom="2rem"
-              textAlign="center"
-              fontWeight="600">
+        <Box className="right-page ">
+          <Flex
+            className="page glass"
+            padding="1rem 2rem"
+            flexDirection="column"
+            justifyContent="space-around">
+            <Text fontSize="1.5rem" textAlign="center" fontWeight="600">
               {cardTitle}
             </Text>
-            <Text fontSize="1rem" fontWeight="300">
+            <Text fontSize="1rem" fontWeight="400">
               {cardText}
             </Text>
-            <Flex>
-              <Image
-                src={nextjs}
-                alt="logo"
-                bgSize="cover"
-                height="4rem"
-                width="2rem"
-              />
-              <Image
-                src={html}
-                alt="logo"
-                bgSize="cover"
-                height="4rem"
-                width="2rem"
-              />
-              <Image
-                src={css}
-                alt="logo"
-                bgSize="cover"
-                height="4rem"
-                width="2rem"
-              />
-              <Image
-                src={express}
-                alt="logo"
-                bgSize="cover"
-                height="4rem"
-                width="2rem"
-              />
+            <Flex gap="1.5rem" justifyContent="center" alignItems="center">
+              {logos.map((logo, index) => (
+                <Image
+                  key={index}
+                  src={logo}
+                  alt={`logo-${index}`}
+                  boxSize="fit-content"
+                  objectFit="cover"
+                  width="2.5rem"
+                  // Add margin to separate logos
+                />
+              ))}
             </Flex>
             {/* <Text fontSize="2rem">
           {cardPrice}/
@@ -109,22 +85,15 @@ const Card: React.FC<CardProps> = ({
             {weeks}
           </span>
         </Text> */}
-          </Box>
+          </Flex>
         </Box>
-        <Box
-          className="left-page"
-          p={{
-            base: ".7rem .7rem",
-            mini: "1rem",
-            lg: "2rem 1.7rem",
-          }}>
-          <Box className="page page-2 glass">
-            <List
-              spacing={3}
-              mb="2.5rem"
-              fontWeight="400"
-              fontSize="1rem"
-              justifyContent="center">
+        <Box className="left-page">
+          <Flex
+            flexDirection="column"
+            justifyContent="space-around"
+            className="page page-2 glass"
+            padding="1rem 2rem">
+            <List spacing={3} mb="2.5rem" fontWeight="600" fontSize="1.2rem">
               <ListItem display="flex" gap=".3rem" alignItems="center">
                 {listOne}
               </ListItem>
@@ -147,7 +116,7 @@ const Card: React.FC<CardProps> = ({
               borderRadius="4px">
               Get Started Now
             </Button>
-          </Box>
+          </Flex>
         </Box>
       </Flex>
       <Box bgColor={bgColors} className="wave" />

@@ -1,6 +1,18 @@
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
-
+import nextjs from "../assets/nextJS.png";
+import html from "../assets/html.png";
+import express from "../assets/expressJS.png";
+import css from "../assets/css3.png";
+import flutter from "../assets/flutter.png";
+import Js from "../assets/javascript.png";
+import firebase from "../assets/firebase.png";
+import androidstudio from "../assets/android-studio.svg";
+import aws from "../assets/aws_icon.png";
+import azure from "../assets/azure_icon.png";
+import react from "../assets/react.svg";
+import docker from "../assets/Docker.webp";
+import kubernetes from "../assets/Kubernetes-Logo.wine.svg";
 const Projects = () => {
   const cardData = [
     {
@@ -13,6 +25,7 @@ const Projects = () => {
       listThree: "Node.js, MongoDB",
       listFour: "Next.js",
       bgColors: "green",
+      logos: [nextjs, html, css, express, Js],
     },
     {
       title: "Mobile Development",
@@ -24,6 +37,7 @@ const Projects = () => {
       listThree: "Firebase",
       listFour: "NativeScript",
       bgColors: "red",
+      logos: [flutter, androidstudio, firebase, react],
     },
     {
       title: "Micro Services",
@@ -35,6 +49,7 @@ const Projects = () => {
       listThree: "GraphQL",
       listFour: "RabbitMQ",
       bgColors: "brown",
+      logos: [azure, aws, docker, kubernetes],
     },
   ];
 
@@ -56,12 +71,12 @@ const Projects = () => {
             cardTitle={card.title}
             cardPrice={card.price}
             weeks={card.weeks}
+            logos={card.logos}
             cardText={card.text}
             listOne={card.listOne}
             listTwo={card.listTwo}
             listThree={card.listThree}
             listFour={card.listFour}
-            style={{}}
           />
         ))}
       </Box>
