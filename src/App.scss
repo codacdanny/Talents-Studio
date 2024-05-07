@@ -243,24 +243,24 @@ $currentPercentage: 0;
 
 @property --num {
   syntax: "<integer>";
-  initial-value: 0;
+  initial-value: 5;
   inherits: false;
 }
-.numAnime {
+
+.twoHuns {
   animation: counter 5s infinite alternate ease-in-out;
   counter-reset: num var(--num);
-  font: 800 40px system-ui;
 }
-.numAnime::after {
+.twoHuns::after {
   content: counter(num);
 }
 
 @keyframes counter {
   from {
-    --num: 0;
+    --num: 5;
   }
   to {
-    --num: 100;
+    --num: 200;
   }
 }
 

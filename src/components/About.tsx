@@ -2,8 +2,10 @@ import {
   Box,
   Flex,
   Heading,
+  Icon,
   Image,
   Link,
+  ListIcon,
   ListItem,
   SimpleGrid,
   Text,
@@ -12,6 +14,7 @@ import {
 import engineer from "../assets/engineering.svg";
 import teach from "../assets/teaching.svg";
 import code from "../assets/code.svg";
+import { BiSolidStar } from "react-icons/bi";
 interface InfoCardProps {
   title: string;
   value: number;
@@ -60,17 +63,28 @@ const About = () => {
             Talents Studio
           </Heading>
           <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
-            Do you ?
+            Do you...
           </Text>
-          <UnorderedList fontWeight={300} fontSize="1.2rem" spacing=".5rem">
-            <ListItem> Have a project idea in need of Devs?</ListItem>
-            <ListItem> Need maintenance on am existing tech project?</ListItem>
-            <ListItem>Require consultation ?</ListItem>
+          <UnorderedList
+            fontWeight={300}
+            fontSize="1.2rem"
+            spacing=".5rem"
+            listStyleType="none">
+            <ListItem>
+              <ListIcon as={BiSolidStar} /> Have a project idea in need of Devs?
+            </ListItem>
+            <ListItem>
+              <ListIcon as={BiSolidStar} /> Need maintenance on an existing tech
+              project?
+            </ListItem>
+            <ListItem>
+              <ListIcon as={BiSolidStar} /> Require consultation ?
+            </ListItem>
           </UnorderedList>
           <Text fontWeight={400} marginTop="1rem">
-            Whether you need a full team or a single techie, Naledi Studio gives
-            you access to all the talent you need for your project. Let us know
-            what you want to build <Link textDecoration="underline">here</Link>
+            Be it a team or a single techie, Naledi Studio gives you access to
+            all the talent you need for your project. Let us know what you want
+            to build <Link textDecoration="underline">here!</Link>
           </Text>
         </Flex>
         <Flex
@@ -81,18 +95,17 @@ const About = () => {
           <Heading textAlign="center" marginBottom="1rem">
             Talents Hub
           </Heading>
-          <Text
-            fontWeight={400}
-            fontSize="1.2rem"
-            textAlign="justify"
-            marginTop=".5rem">
+          <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
+            Become a Techie{" "}
+          </Text>
+          <Text fontWeight={400} fontSize="1.2rem" textAlign="justify">
             Learn in-demand tech skills that are relevant worldwide.
             <br /> With our well curated course contents and skilled
             facilitators, your tech career is just one step away.
           </Text>
           <Text marginY="1rem">
             Find the right course for you{" "}
-            <Link textDecoration="underline">here</Link>{" "}
+            <Link textDecoration="underline">here!</Link>{" "}
           </Text>
         </Flex>
         <Box>
@@ -124,7 +137,7 @@ const About = () => {
         />
         <Flex flexDir="column" gap=".5rem" className="bounce">
           <Text fontSize="2rem" fontWeight="600">
-            About Us ,
+            About Us
           </Text>
           <Text fontSize="3rem" fontWeight="500">
             TalentTech is the home of all things tech
@@ -133,15 +146,22 @@ const About = () => {
             {" "}
             TalentsTech comprises of Talents Studio and Talents Hub
           </Text>
-          <Text fontSize="1rem" fontWeight="400">
-            Talents Studio makes the talent available to bring our clients'
-            project ideas to reality.
-          </Text>
-          <Text fontSize="1rem" fontWeight="400">
-            Talents Hub makes it possible for our students to learn emerging
-            tech skills to jumpstart their careers. Our graduates have an
-            employment rate of 92%
-          </Text>
+          <Flex alignItems="center" gap=".5rem">
+            <Icon as={BiSolidStar} />
+            <Text fontSize="1rem" fontWeight="400">
+              NalediTech Studio provides clients with the talent required to
+              bring their project ideas to life.
+            </Text>
+          </Flex>
+          <Flex alignItems="center" gap=".5rem">
+            <Icon as={BiSolidStar} />
+            <Text fontSize="1rem" fontWeight="400">
+              NalediTech Academy makes it possible for students to learn
+              emerging tech skills, to jumpstart or switch careers. NT Academy
+              graduates have an employment rate of 92%
+            </Text>
+          </Flex>
+
           <SimpleGrid columns={2} spacing={25} paddingX="3rem">
             <InfoCard title="Completed Projects" value={200} />
             <InfoCard title="Satisfied Clients" value={100} />
