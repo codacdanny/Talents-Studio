@@ -87,7 +87,7 @@ const Main = () => {
             medium.
           </Text>
           <Flex flexDirection="column" gap="2rem" width="50%">
-            <Lottie options={defaultOptions} height={300} width={400} />
+            <Lottie options={defaultOptions} height={300} width={300} />
             <Flex justifyContent="center" gap="1rem">
               <Image src={facebook} alt="social media logo" boxSize="40px" />
               <Image src={instagram} alt="social media logo" boxSize="40px" />
