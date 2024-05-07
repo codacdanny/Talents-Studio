@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 // Love dynamically typed text? You're gonna love this
 // Edit these strings to see them typed on the screen:
-$strings: ("WELCOME TO TALENTS HUNT STUDIO" "LET'S HUNT 🏹");
+$strings: ("WELCOME TO NALEDI TECH" "EXPLORE!!!");
 
 // now for some timing (in seconds)
 $durCharFwd: 0.1; // character typed
@@ -248,7 +248,7 @@ $currentPercentage: 0;
 }
 
 .twoHuns {
-  animation: counter 5s infinite alternate ease-in-out;
+  animation: counter 4s forwards ease-in-out;
   counter-reset: num var(--num);
 }
 .twoHuns::after {
@@ -261,6 +261,74 @@ $currentPercentage: 0;
   }
   to {
     --num: 200;
+  }
+}
+
+@property --num1 {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.twoHuns1 {
+  animation: counter1 4s forwards ease-in-out;
+  counter-reset: num1 var(--num1);
+}
+.twoHuns1::after {
+  content: counter1(num1);
+}
+
+@keyframes counter1 {
+  from {
+    --num1: 0;
+  }
+  to {
+    --num1: 100;
+  }
+}
+
+@property --num2 {
+  syntax: "<integer>";
+  initial-value: 2;
+  inherits: false;
+}
+
+.twoHuns2 {
+  animation: counter2 4s forwards ease-in-out;
+  counter-reset: num2 var(--num2);
+}
+.twoHuns2::after {
+  content: counter2(num2);
+}
+
+@keyframes counter2 {
+  from {
+    --num2: 2;
+  }
+  to {
+    --num2: 10;
+  }
+}
+
+@property --num3 {
+  syntax: "<integer>";
+  initial-value: 3;
+  inherits: false;
+}
+.twoHuns3 {
+  animation: counter3 4s forwards ease-in-out;
+  counter-reset: num3 var(--num3);
+}
+.twoHuns3::after {
+  content: counter3(num3);
+}
+
+@keyframes counter3 {
+  from {
+    --num3: 3;
+  }
+  to {
+    --num3: 20;
   }
 }
 

@@ -2,7 +2,7 @@ import { Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
-import telegram from "../assets/telegram.svg";
+import email from "../assets/email.png";
 import twitter from "../assets/twitter.svg";
 const Footer = () => {
   return (
@@ -49,7 +49,7 @@ const Footer = () => {
         <Image src={instagram} alt="social media logo" boxSize="40px" />
         <Image src={twitter} alt="social media logo" boxSize="40px" />
         <Image src={linkedin} alt="social media logo" boxSize="40px" />
-        <Image src={telegram} alt="social media logo" boxSize="40px" />
+        <Image src={email} alt="social media logo" boxSize="40px" />
       </Flex>
       <Text fontWeight="100" textAlign="center" marginY="1.5rem">
         All Rights Reserved &copy;2023

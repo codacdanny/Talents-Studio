@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Flex,
   Heading,
   Icon,
@@ -15,6 +16,7 @@ import engineer from "../assets/engineering.svg";
 import teach from "../assets/teaching.svg";
 import code from "../assets/code.svg";
 import { BiSolidStar } from "react-icons/bi";
+
 interface InfoCardProps {
   title: string;
   value: number;
@@ -32,14 +34,18 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
     </Flex>
   );
 };
-
 const About = () => {
   return (
     <Box marginY="3rem">
-      <Heading textAlign="center" marginY="2rem">
+      <Heading textAlign="center" marginBottom="7rem">
         What we Do
       </Heading>
-      <SimpleGrid columns={2} spacing={10} rowGap="8rem" alignItems="center">
+      <SimpleGrid
+        columns={2}
+        spacing={10}
+        rowGap="8rem"
+        alignItems="center"
+        marginTop="2rem">
         <Box className="bounce">
           {" "}
           <Image
@@ -48,66 +54,86 @@ const About = () => {
             objectFit="cover"
             alt="runner image"
             bgColor="transparent"
-            data-aos="fade-left"
-            data-aos-anchor="#example-anchor"
-            data-aos-offset="500"
-            data-aos-duration="500"
+            data-aos="zoom-in-left"
           />
         </Box>
-        <Flex
+        <Box
+          data-aos="zoom-in-right"
+          className="bounce purple-glass"
+          padding="1rem 1.5rem"
+          borderRadius="1rem">
+          <Flex flexDirection="column">
+            <Heading textAlign="center" marginBottom="1rem">
+              NalediTech Studio
+            </Heading>
+            <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
+              Do you...
+            </Text>
+            <UnorderedList
+              fontWeight={300}
+              fontSize="1.2rem"
+              spacing=".5rem"
+              listStyleType="none">
+              <ListItem>
+                <ListIcon as={BiSolidStar} /> Have a project idea in need of
+                Devs?
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BiSolidStar} /> Need maintenance on an existing
+                tech project?
+              </ListItem>
+              <ListItem>
+                <ListIcon as={BiSolidStar} /> Require consultation ?
+              </ListItem>
+            </UnorderedList>
+            <Text fontWeight={400} marginTop="1rem">
+              Be it a team or a single techie, Naledi Studio gives you access to
+              all the talent you need for your project. Let us know what you
+              want to build.
+            </Text>
+          </Flex>
+          <Button
+            my="1rem"
+            as="a"
+            href="#"
+            colorScheme="gray"
+            outline="none"
+            borderRadius="4px">
+            Learn More
+          </Button>
+        </Box>
+        <Box
           className="bounce purple-glass"
           padding="1rem 1.5rem"
           borderRadius="1rem"
-          flexDirection="column">
-          <Heading textAlign="center" marginBottom="1rem">
-            Talents Studio
-          </Heading>
-          <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
-            Do you...
-          </Text>
-          <UnorderedList
-            fontWeight={300}
-            fontSize="1.2rem"
-            spacing=".5rem"
-            listStyleType="none">
-            <ListItem>
-              <ListIcon as={BiSolidStar} /> Have a project idea in need of Devs?
-            </ListItem>
-            <ListItem>
-              <ListIcon as={BiSolidStar} /> Need maintenance on an existing tech
-              project?
-            </ListItem>
-            <ListItem>
-              <ListIcon as={BiSolidStar} /> Require consultation ?
-            </ListItem>
-          </UnorderedList>
-          <Text fontWeight={400} marginTop="1rem">
-            Be it a team or a single techie, Naledi Studio gives you access to
-            all the talent you need for your project. Let us know what you want
-            to build <Link textDecoration="underline">here!</Link>
-          </Text>
-        </Flex>
-        <Flex
-          className="bounce purple-glass"
-          padding="1rem 1.5rem"
-          borderRadius="1rem"
-          flexDirection="column">
-          <Heading textAlign="center" marginBottom="1rem">
-            Talents Hub
-          </Heading>
-          <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
-            Become a Techie{" "}
-          </Text>
-          <Text fontWeight={400} fontSize="1.2rem" textAlign="justify">
-            Learn in-demand tech skills that are relevant worldwide.
-            <br /> With our well curated course contents and skilled
-            facilitators, your tech career is just one step away.
-          </Text>
-          <Text marginY="1rem">
-            Find the right course for you{" "}
-            <Link textDecoration="underline">here!</Link>{" "}
-          </Text>
-        </Flex>
+          data-aos="zoom-in-left">
+          <Flex flexDirection="column">
+            <Heading textAlign="center" marginBottom="1rem">
+              NalediTech Academy
+            </Heading>
+            <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
+              Become a Techie{" "}
+            </Text>
+            <Text fontWeight={400} fontSize="1.2rem" textAlign="justify">
+              Learn in-demand tech skills that are relevant worldwide.
+              <br /> With our well curated course contents and skilled
+              facilitators, your tech career is just one step away.
+            </Text>
+            <Text marginY="1rem">
+              Find the right course for you{" "}
+              <Link textDecoration="underline">here!</Link>{" "}
+            </Text>
+          </Flex>
+          <Button
+            my="1rem"
+            as="a"
+            href="#"
+            colorScheme="gray"
+            outline="none"
+            borderRadius="4px">
+            Learn More
+          </Button>
+        </Box>
         <Box>
           {" "}
           <Image
@@ -117,34 +143,32 @@ const About = () => {
             objectFit="cover"
             alt="runner image"
             bgColor="transparent"
-            data-aos="fade-left"
-            data-aos-anchor="#example-anchor"
-            data-aos-offset="500"
-            data-aos-duration="500"
+            data-aos="zoom-in-right"
           />
         </Box>
         <Image
+          data-aos="fade-up"
           className="bounce"
           src={teach}
           boxSize="fit-content"
           objectFit="cover"
           alt="runner image"
           bgColor="transparent"
-          data-aos="fade-left"
-          data-aos-anchor="#example-anchor"
-          data-aos-offset="500"
-          data-aos-duration="500"
         />
-        <Flex flexDir="column" gap=".5rem" className="bounce">
+        <Flex
+          flexDir="column"
+          gap=".5rem"
+          className="bounce"
+          data-aos="fade-up">
           <Text fontSize="2rem" fontWeight="600">
             About Us
           </Text>
           <Text fontSize="3rem" fontWeight="500">
-            TalentTech is the home of all things tech
+            NalediTech is the home of all things Software Engineering
           </Text>
           <Text fontSize="1.8rem" fontWeight="500">
             {" "}
-            TalentsTech comprises of Talents Studio and Talents Hub
+            NalediTech is made up of NalediTech Studio and NalediTech Academy
           </Text>
           <Flex alignItems="center" gap=".5rem">
             <Icon as={BiSolidStar} />
@@ -162,7 +186,11 @@ const About = () => {
             </Text>
           </Flex>
 
-          <SimpleGrid columns={2} spacing={25} paddingX="3rem">
+          <SimpleGrid
+            columns={2}
+            spacing={25}
+            paddingX="3rem"
+            data-aos="fade-up">
             <InfoCard title="Completed Projects" value={200} />
             <InfoCard title="Satisfied Clients" value={100} />
             <InfoCard title="Enrolled Students" value={10} />

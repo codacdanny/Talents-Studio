@@ -8,7 +8,6 @@ import About from "./About";
 import facebook from "../assets/facebook.svg";
 import instagram from "../assets/instagram.svg";
 import linkedin from "../assets/linkedin.svg";
-import telegram from "../assets/telegram.svg";
 import twitter from "../assets/twitter.svg";
 import email from "../assets/email.png";
 
@@ -75,7 +74,7 @@ const Main = () => {
         />
       ))}
       <Projects />
-      <Box marginY="3rem">
+      <Box marginY="3rem" data-aos="fade-up-right">
         <Heading marginY="2rem" textAlign="center">
           Help us connect with you
         </Heading>
@@ -93,7 +92,6 @@ const Main = () => {
               <Image src={instagram} alt="social media logo" boxSize="40px" />
               <Image src={twitter} alt="social media logo" boxSize="40px" />
               <Image src={linkedin} alt="social media logo" boxSize="40px" />
-              <Image src={telegram} alt="social media logo" boxSize="40px" />
               <Image src={email} alt="social media logo" boxSize="40px" />
             </Flex>
           </Flex>
