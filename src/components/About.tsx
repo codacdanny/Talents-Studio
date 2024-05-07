@@ -9,8 +9,9 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import runner from "../assets/Running man.svg";
-
+import engineer from "../assets/engineering.svg";
+import teach from "../assets/teaching.svg";
+import code from "../assets/code.svg";
 interface InfoCardProps {
   title: string;
   value: number;
@@ -39,7 +40,7 @@ const About = () => {
         <Box className="bounce">
           {" "}
           <Image
-            src={runner}
+            src={engineer}
             boxSize="fit-content"
             objectFit="cover"
             alt="runner image"
@@ -98,7 +99,7 @@ const About = () => {
           {" "}
           <Image
             className="bounce"
-            src={runner}
+            src={code}
             boxSize="fit-content"
             objectFit="cover"
             alt="runner image"
@@ -111,7 +112,7 @@ const About = () => {
         </Box>
         <Image
           className="bounce"
-          src={runner}
+          src={teach}
           boxSize="fit-content"
           objectFit="cover"
           alt="runner image"
