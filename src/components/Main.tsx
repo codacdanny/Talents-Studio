@@ -1,10 +1,16 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 
 import Projects from "./Projects";
 import Lottie from "react-lottie";
 import animationData from "../assets/animate.json";
 import About from "./About";
+import facebook from "../assets/facebook.svg";
+import instagram from "../assets/instagram.svg";
+import linkedin from "../assets/linkedin.svg";
+import telegram from "../assets/telegram.svg";
+import twitter from "../assets/twitter.svg";
+import email from "../assets/email.png";
 
 const Main = () => {
   useEffect(() => {
@@ -82,8 +88,14 @@ const Main = () => {
           </Text>
           <Flex flexDirection="column" gap="2rem" width="50%">
             <Lottie options={defaultOptions} height={300} width={400} />
-
-            <Button borderRadius="20px">Send a message</Button>
+            <Flex justifyContent="center" gap="1rem">
+              <Image src={facebook} alt="social media logo" boxSize="40px" />
+              <Image src={instagram} alt="social media logo" boxSize="40px" />
+              <Image src={twitter} alt="social media logo" boxSize="40px" />
+              <Image src={linkedin} alt="social media logo" boxSize="40px" />
+              <Image src={telegram} alt="social media logo" boxSize="40px" />
+              <Image src={email} alt="social media logo" boxSize="40px" />
+            </Flex>
           </Flex>
         </Flex>
       </Box>
