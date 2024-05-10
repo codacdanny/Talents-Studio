@@ -56,7 +56,7 @@ const Projects = () => {
   return (
     <Box marginY="9rem" position="relative">
       <Heading textAlign="center" marginY="2rem">
-        Become a Techie
+        Become a Techie!
       </Heading>
       <Box
         id="card"
