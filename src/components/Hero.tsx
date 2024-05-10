@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
             alignItems="center">
             <Flex direction="column" width="55%" gap="2rem">
               <Heading as="h2" fontSize="5rem">
-                Find The Right Talents To Handle Your Tech Projects
+                Find The Right Talent To Handle Your Tech Projects
               </Heading>
               <Heading as="h3" fontSize="1rem">
                 Get the right dev or team to get your million-dollar idea to MVP

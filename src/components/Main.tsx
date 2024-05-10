@@ -76,14 +76,13 @@ const Main = () => {
       <Projects />
       <Box marginY="3rem" data-aos="fade-up-right">
         <Heading marginY="2rem" textAlign="center">
-          Help us connect with you
+          Get In Touch{" "}
         </Heading>
         <Flex width="100%" alignItems="center" gap="6rem">
           <Text width="40%" fontSize="1.5rem" fontWeight="400">
-            This helps us keep in touch with you. Do kindly note that any
-            infomation sent would be on a need-to-know basis. Also, further
-            stages of the admission process would be communicated through the
-            medium.
+            Connect with us via our social media handles. We are excited to meet
+            you! Do not hesitate to reach out with your questions and enquiries
+            as well.
           </Text>
           <Flex flexDirection="column" gap="2rem" width="50%">
             <Lottie options={defaultOptions} height={300} width={300} />

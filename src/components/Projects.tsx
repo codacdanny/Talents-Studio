@@ -59,6 +59,7 @@ const Projects = () => {
         Become a Techie
       </Heading>
       <Box
+        id="card"
         display="flex"
         alignItems="center"
         justifyContent="center"

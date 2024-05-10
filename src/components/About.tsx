@@ -5,7 +5,6 @@ import {
   Heading,
   Icon,
   Image,
-  Link,
   ListIcon,
   ListItem,
   SimpleGrid,
@@ -38,7 +37,7 @@ const About = () => {
   return (
     <Box marginY="3rem">
       <Heading textAlign="center" marginBottom="7rem">
-        What we Do
+        What We Do
       </Heading>
       <SimpleGrid
         columns={2}
@@ -70,7 +69,7 @@ const About = () => {
               Do you...
             </Text>
             <UnorderedList
-              fontWeight={300}
+              fontWeight={500}
               fontSize="1.2rem"
               spacing=".5rem"
               listStyleType="none">
@@ -86,10 +85,10 @@ const About = () => {
                 <ListIcon as={BiSolidStar} /> Require consultation ?
               </ListItem>
             </UnorderedList>
-            <Text fontWeight={400} marginTop="1rem">
-              Be it a team or a single techie, Naledi Studio gives you access to
-              all the talent you need for your project. Let us know what you
-              want to build.
+            <Text fontSize="1.2rem" fontWeight={400} marginTop="1rem">
+              Be it a team or a single techie, NalediTech Studio gives you
+              access to all the talent you need for your project. Let us know
+              what you want to build.
             </Text>
           </Flex>
           <Button
@@ -99,7 +98,7 @@ const About = () => {
             colorScheme="gray"
             outline="none"
             borderRadius="4px">
-            Learn More
+            Contact Us
           </Button>
         </Box>
         <Box
@@ -112,22 +111,22 @@ const About = () => {
               NalediTech Academy
             </Heading>
             <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
-              Become a Techie{" "}
+              Become a Techie!{" "}
             </Text>
             <Text fontWeight={400} fontSize="1.2rem" textAlign="justify">
               Learn in-demand tech skills that are relevant worldwide.
               <br /> With our well curated course contents and skilled
               facilitators, your tech career is just one step away.
             </Text>
-            <Text marginY="1rem">
-              Find the right course for you{" "}
-              <Link textDecoration="underline">here!</Link>{" "}
+            <Text marginY="1rem" fontSize="1.2rem">
+              {" "}
+              Find the right course for you here!
             </Text>
           </Flex>
           <Button
             my="1rem"
             as="a"
-            href="#"
+            href="#card"
             colorScheme="gray"
             outline="none"
             borderRadius="4px">
@@ -156,41 +155,37 @@ const About = () => {
           bgColor="transparent"
         />
         <Flex
+          borderRadius="1rem"
+          padding="1rem 1.5rem"
           flexDir="column"
           gap=".5rem"
-          className="bounce"
+          className="bounce  purple-glass"
           data-aos="fade-up">
-          <Text fontSize="2rem" fontWeight="600">
+          <Heading textAlign="center" marginBottom="3rem">
             About Us
+          </Heading>
+          <Text fontSize="1.5rem" fontWeight="400">
+            NalediTech is your one-stop shop for tech services/all things tech.
+            With our Academy and Studio, we have got your needs covered.
           </Text>
-          <Text fontSize="3rem" fontWeight="500">
-            NalediTech is the home of all things Software Engineering
-          </Text>
-          <Text fontSize="1.8rem" fontWeight="500">
-            {" "}
-            NalediTech is made up of NalediTech Studio and NalediTech Academy
-          </Text>
+
           <Flex alignItems="center" gap=".5rem">
-            <Icon as={BiSolidStar} />
-            <Text fontSize="1rem" fontWeight="400">
+            <Icon as={BiSolidStar} fontSize="1.2rem" />
+            <Text fontWeight={500} fontSize="1.2rem">
               NalediTech Studio provides clients with the talent required to
               bring their project ideas to life.
             </Text>
           </Flex>
           <Flex alignItems="center" gap=".5rem">
-            <Icon as={BiSolidStar} />
-            <Text fontSize="1rem" fontWeight="400">
+            <Icon as={BiSolidStar} fontSize="1.2rem" />
+            <Text fontWeight={500} fontSize="1.2rem">
               NalediTech Academy makes it possible for students to learn
               emerging tech skills, to jumpstart or switch careers. NT Academy
               graduates have an employment rate of 92%
             </Text>
           </Flex>
 
-          <SimpleGrid
-            columns={2}
-            spacing={25}
-            paddingX="3rem"
-            data-aos="fade-up">
+          <SimpleGrid columns={2} spacing={25} paddingX="3rem">
             <InfoCard title="Completed Projects" value={200} />
             <InfoCard title="Satisfied Clients" value={100} />
             <InfoCard title="Enrolled Students" value={10} />

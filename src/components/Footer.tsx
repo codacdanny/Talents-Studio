@@ -10,7 +10,6 @@ const Footer = () => {
       className="main"
       background="rgb(60,14,90)"
       bgImage="linear-gradient(90deg, rgba(60,14,90,0.5495448179271709) 20%, rgba(19,1,33,0.6755952380952381) 75%)"
-      //bg="transparent"
       color="#fff"
       padding="3rem 3rem 0rem  3rem"
       borderTop=".5px solid #000"
@@ -18,7 +17,7 @@ const Footer = () => {
       alignItems="space-between">
       <Flex flexDirection="column" marginBottom="6rem">
         <Heading as="h3" marginY="2rem">
-          Talents
+          NalediTech
         </Heading>
         <Flex justifyContent="space-between" fontWeight="200">
           <Flex flexDirection="column" gap="1rem">
