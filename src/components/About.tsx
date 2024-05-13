@@ -161,22 +161,22 @@ const About = () => {
           gap=".5rem"
           className="bounce  purple-glass"
           data-aos="fade-up">
-          <Heading textAlign="center" marginBottom="3rem">
+          <Heading textAlign="center" marginBottom="1rem">
             About Us
           </Heading>
-          <Text fontSize="1.5rem" fontWeight="400">
+          <Text fontSize="1.5rem" fontWeight="400" marginBottom=".6rem">
             NalediTech is your one-stop shop for tech services/all things tech.
             With our Academy and Studio, we have got your needs covered.
           </Text>
 
-          <Flex alignItems="center" gap=".5rem">
+          <Flex alignItems="center" gap=".5rem" marginBottom=".6rem">
             <Icon as={BiSolidStar} fontSize="1.2rem" />
             <Text fontWeight={500} fontSize="1.2rem">
               NalediTech Studio provides clients with the talent required to
               bring their project ideas to life.
             </Text>
           </Flex>
-          <Flex alignItems="center" gap=".5rem">
+          <Flex alignItems="center" gap=".5rem" marginBottom=".6rem">
             <Icon as={BiSolidStar} fontSize="1.2rem" />
             <Text fontWeight={500} fontSize="1.2rem">
               NalediTech Academy makes it possible for students to learn

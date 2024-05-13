@@ -11,11 +11,11 @@ const Footer = () => {
       background="rgb(60,14,90)"
       bgImage="linear-gradient(90deg, rgba(60,14,90,0.5495448179271709) 20%, rgba(19,1,33,0.6755952380952381) 75%)"
       color="#fff"
-      padding="3rem 3rem 0rem  3rem"
+      padding="1rem 3rem 0rem  3rem"
       borderTop=".5px solid #000"
       flexDirection="column"
       alignItems="space-between">
-      <Flex flexDirection="column" marginBottom="6rem">
+      <Flex flexDirection="column" marginBottom="1rem">
         <Heading as="h3" marginY="2rem">
           NalediTech
         </Heading>
@@ -25,6 +25,13 @@ const Footer = () => {
             <Text>
               Plot 5A, Nigerian Federation Avenue, Off Ibadan Expressway, Lagos.
             </Text>
+            <Flex justifyContent="left" gap="1rem">
+              <Image src={facebook} alt="social media logo" boxSize="40px" />
+              <Image src={instagram} alt="social media logo" boxSize="40px" />
+              <Image src={twitter} alt="social media logo" boxSize="40px" />
+              <Image src={linkedin} alt="social media logo" boxSize="40px" />
+              <Image src={email} alt="social media logo" boxSize="40px" />
+            </Flex>
           </Flex>
 
           <SimpleGrid columns={3} spacing={20}>
@@ -43,13 +50,7 @@ const Footer = () => {
           </SimpleGrid>
         </Flex>
       </Flex>
-      <Flex justifyContent="center" gap="1rem">
-        <Image src={facebook} alt="social media logo" boxSize="40px" />
-        <Image src={instagram} alt="social media logo" boxSize="40px" />
-        <Image src={twitter} alt="social media logo" boxSize="40px" />
-        <Image src={linkedin} alt="social media logo" boxSize="40px" />
-        <Image src={email} alt="social media logo" boxSize="40px" />
-      </Flex>
+
       <Text fontWeight="100" textAlign="center" marginY="1.5rem">
         All Rights Reserved &copy;2023
       </Text>
