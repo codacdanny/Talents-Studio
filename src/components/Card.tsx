@@ -53,7 +53,8 @@ const Card: React.FC<CardProps> = ({
         className="card-container">
         <Box className="right-page ">
           <Flex
-            className="page glass"
+            className="glass"
+            // className="page glass"
             padding="1rem 2rem"
             flexDirection="column"
             justifyContent="space-around">
@@ -69,9 +70,9 @@ const Card: React.FC<CardProps> = ({
                   key={index}
                   src={logo}
                   alt={`logo-${index}`}
-                  boxSize="fit-content"
                   objectFit="cover"
-                  width="2.5rem"
+                  boxSize="45px"
+                  p=".2rem"
                   // Add margin to separate logos
                 />
               ))}
@@ -91,7 +92,8 @@ const Card: React.FC<CardProps> = ({
           <Flex
             flexDirection="column"
             justifyContent="space-around"
-            className="page page-2 glass"
+            // className="page page-2 glass"
+            className="glass"
             padding="1rem 2rem">
             <List spacing={3} mb="2.5rem" fontWeight="600" fontSize="1.2rem">
               <ListItem display="flex" gap=".3rem" alignItems="center">
