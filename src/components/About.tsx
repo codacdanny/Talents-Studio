@@ -36,7 +36,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => {
 const About = () => {
   return (
     <Box marginY="3rem">
-      <Heading textAlign="center" marginBottom="7rem">
+      <Heading className="mont" textAlign="center" marginBottom="7rem">
         What We Do
       </Heading>
       <SimpleGrid
@@ -62,7 +62,7 @@ const About = () => {
           padding="1rem 1.5rem"
           borderRadius="1rem">
           <Flex flexDirection="column">
-            <Heading textAlign="center" marginBottom="1rem">
+            <Heading className="mont" textAlign="center" marginBottom="1rem">
               NalediTech Studio
             </Heading>
             <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
@@ -107,7 +107,7 @@ const About = () => {
           borderRadius="1rem"
           data-aos="zoom-in-left">
           <Flex flexDirection="column">
-            <Heading textAlign="center" marginBottom="1rem">
+            <Heading className="mont" textAlign="center" marginBottom="1rem">
               NalediTech Academy
             </Heading>
             <Text fontSize="1.3rem" marginBottom=".7rem" fontWeight={500}>
@@ -161,7 +161,7 @@ const About = () => {
           gap=".5rem"
           className="bounce  purple-glass"
           data-aos="fade-up">
-          <Heading textAlign="center" marginBottom="1rem">
+          <Heading className="mont" textAlign="center" marginBottom="1rem">
             About Us
           </Heading>
           <Text fontSize="1.5rem" fontWeight="400" marginBottom=".6rem">

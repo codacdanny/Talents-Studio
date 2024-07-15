@@ -16,7 +16,7 @@ const Footer = () => {
       flexDirection="column"
       alignItems="space-between">
       <Flex flexDirection="column" marginBottom="1rem">
-        <Heading as="h3" marginY="2rem">
+        <Heading className="mont" as="h3" marginY="2rem">
           NalediTech
         </Heading>
         <Flex justifyContent="space-between" fontWeight="200">

@@ -1,5 +1,12 @@
 @use "sass:math";
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  font-family: "Philosopher", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 // Love dynamically typed text? You're gonna love this
 // Edit these strings to see them typed on the screen:
 $strings: ("WELCOME TO NALEDITECH" "EXPLORE!!!");
@@ -453,3 +460,6 @@ $currentPercentage: 0;
 }
 
 /* TYPOGRAPHY */
+.mont {
+  font-family: "Montserrat" !important;
+}

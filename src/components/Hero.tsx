@@ -19,7 +19,9 @@ const Hero: React.FC = () => {
       <Box>
         <Box color="#ffffff" className="hero" padding="1rem 3rem" height="100%">
           <Flex as="nav" justifyContent="space-between" alignItems="center">
-            <Heading as="h3">NalediTech</Heading>
+            <Heading className="mont" as="h3">
+              NalediTech
+            </Heading>
             <List
               fontSize="1.4rem"
               fontWeight="400"
@@ -38,10 +40,10 @@ const Hero: React.FC = () => {
             marginTop="2rem"
             alignItems="center">
             <Flex direction="column" width="55%" gap="2rem">
-              <Heading as="h2" fontSize="5rem">
+              <Heading className="mont" as="h2" fontSize="5rem">
                 Find The Right Talent To Handle Your Tech Projects
               </Heading>
-              <Heading as="h3" fontSize="1rem">
+              <Heading className="mont" as="h3" fontSize="1rem">
                 Get the right dev or team to get your million-dollar idea to MVP
                 stage and beyond.
               </Heading>

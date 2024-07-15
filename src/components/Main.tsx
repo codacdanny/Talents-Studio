@@ -75,7 +75,7 @@ const Main = () => {
       ))}
       <Projects />
       <Box marginY="3rem" data-aos="fade-up-right">
-        <Heading marginY="2rem" textAlign="center">
+        <Heading className="mont" marginY="2rem" textAlign="center">
           Get In Touch{" "}
         </Heading>
         <Flex width="100%" alignItems="center" gap="6rem">
