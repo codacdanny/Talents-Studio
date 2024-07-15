@@ -12,9 +12,9 @@ const Hero: React.FC = () => {
   return (
     <>
       <Box position="relative" height="100vh" overflow="hidden">
-        <Box className="anime2">
+        {/* <Box className="anime2">
           <Box className="introID" minHeight="100svh" />
-        </Box>
+        </Box> */}
       </Box>
       <Box>
         <Box color="#ffffff" className="hero" padding="1rem 3rem" height="100%">
