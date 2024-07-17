@@ -42,22 +42,21 @@ const Card: React.FC<CardProps> = ({
         textColor={{
           base: "#d4d4d4",
         }}
-        p={{
-          base: ".7rem .7rem",
-          mini: "1rem",
-          lg: "2rem 1.7rem",
-        }}
-        textAlign="left"
+        // p={{
+        //   base: ".7rem .7rem",
+        //   mini: "1rem",
+        //   lg: "2rem 1.7rem",
+        // }}
         // flexDir="column"
         justifyContent="space-around"
         className="card-container">
-        <Box className="right-page ">
+        <Box className="glass" borderRadius="12px" padding="1rem 2rem">
           <Flex
-            className="glass"
             // className="page glass"
-            padding="1rem 2rem"
+
             flexDirection="column"
-            justifyContent="space-around">
+            justifyContent="space-around"
+            borderRadius="12px">
             <Text fontSize="1.5rem" textAlign="center" fontWeight="600">
               {cardTitle}
             </Text>
@@ -87,38 +86,29 @@ const Card: React.FC<CardProps> = ({
           </span>
         </Text> */}
           </Flex>
-        </Box>
-        <Box className="left-page">
-          <Flex
-            flexDirection="column"
-            justifyContent="space-around"
-            // className="page page-2 glass"
-            className="glass"
-            padding="1rem 2rem">
-            <List spacing={3} mb="2.5rem" fontWeight="600" fontSize="1.2rem">
-              <ListItem display="flex" gap=".3rem" alignItems="center">
-                {listOne}
-              </ListItem>
-              <ListItem display="flex" gap=".3rem" alignItems="center">
-                {listTwo}
-              </ListItem>
-              <ListItem display="flex" gap=".3rem" alignItems="center">
-                {listThree}
-              </ListItem>
+          <List spacing={3} mb="2.5rem" fontWeight="600" fontSize="1.2rem">
+            <ListItem display="flex" gap=".3rem" alignItems="center">
+              {listOne}
+            </ListItem>
+            <ListItem display="flex" gap=".3rem" alignItems="center">
+              {listTwo}
+            </ListItem>
+            <ListItem display="flex" gap=".3rem" alignItems="center">
+              {listThree}
+            </ListItem>
 
-              <ListItem display="flex" gap=".3rem" alignItems="center">
-                {listFour}
-              </ListItem>
-            </List>
-            <Button
-              as="a"
-              href="#"
-              colorScheme="gray"
-              outline="none"
-              borderRadius="4px">
-              Get Started Now
-            </Button>
-          </Flex>
+            <ListItem display="flex" gap=".3rem" alignItems="center">
+              {listFour}
+            </ListItem>
+          </List>
+          <Button
+            as="a"
+            href="#"
+            colorScheme="gray"
+            outline="none"
+            borderRadius="4px">
+            Get Started Now
+          </Button>
         </Box>
       </Flex>
       <Box bgColor={bgColors} className="wave" />
