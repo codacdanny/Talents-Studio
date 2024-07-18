@@ -59,6 +59,7 @@ const About = () => {
         <Box
           data-aos="zoom-in-right"
           className="bounce purple-glass"
+          id="about"
           padding="1rem 1.5rem"
           borderRadius="1rem">
           <Flex flexDirection="column">
@@ -97,7 +98,7 @@ const About = () => {
             href="#"
             colorScheme="gray"
             outline="none"
-            borderRadius="4px">
+            borderRadius="full">
             Contact Us
           </Button>
         </Box>
@@ -129,7 +130,7 @@ const About = () => {
             href="#card"
             colorScheme="gray"
             outline="none"
-            borderRadius="4px">
+            borderRadius="full">
             Learn More
           </Button>
         </Box>

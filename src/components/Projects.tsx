@@ -16,8 +16,7 @@ const Projects = () => {
   const cardData = [
     {
       title: "Web Development",
-      price: "N450,000",
-      weeks: "6 months",
+      bgColors: "linear(to-r, blackAlpha.900, purple.800)",
       text: "Learn basic UI design concepts and technologies for building complex web applications",
       listOne: "HTML, CSS, JavaScript",
       listTwo: "React",
@@ -27,8 +26,7 @@ const Projects = () => {
     },
     {
       title: "Mobile Development",
-      price: "N500,000",
-      weeks: "6 months",
+      bgColors: "linear(to-r, blackAlpha.900, purple.800)",
       text: "Gain expertise in developing mobile applications for both Android and iOS platforms.",
       listOne: "Flutter",
       listTwo: "React Native",
@@ -38,8 +36,7 @@ const Projects = () => {
     },
     {
       title: "Micro Services",
-      price: "N700,000",
-      weeks: "6 months",
+      bgColors: "linear(to-r, blackAlpha.900, purple.800)",
       text: "Explore the architecture of microservices and learn to build scalable and resilient systems.",
       listOne: "Docker",
       listTwo: "Kubernetes",
@@ -64,9 +61,8 @@ const Projects = () => {
           <Card
             key={index}
             cardTitle={card.title}
-            cardPrice={card.price}
-            weeks={card.weeks}
             logos={card.logos}
+            bgColors={card.bgColors}
             cardText={card.text}
             listOne={card.listOne}
             listTwo={card.listTwo}

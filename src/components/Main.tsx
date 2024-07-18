@@ -74,7 +74,7 @@ const Main = () => {
         />
       ))}
       <Projects />
-      <Box marginY="3rem" data-aos="fade-up-right">
+      <Box id="contact" marginY="3rem" data-aos="fade-up-right">
         <Heading className="mont" marginY="2rem" textAlign="center">
           Get In Touch{" "}
         </Heading>

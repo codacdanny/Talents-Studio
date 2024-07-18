@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Flex,
   Image,
@@ -11,51 +12,69 @@ import { FC } from "react";
 
 interface CardProps {
   cardTitle: string;
-  cardPrice: string;
   cardText: string;
-  weeks: string;
+  bgColors: string;
+  headerBgImage?: string; // Optional background image for the header
   logos: string[];
   listOne: string;
   listTwo: string;
   listThree: string;
   listFour: string;
+  style?: React.CSSProperties;
 }
 
 const Card: FC<CardProps> = ({
   cardTitle,
   cardText,
+  bgColors,
 
   logos,
   listOne,
   listTwo,
   listThree,
   listFour,
+  style,
 }) => {
   const cardBg = useColorModeValue("white", "gray.800");
   const cardShadow = useColorModeValue("md", "dark-lg");
 
   return (
     <Flex
+      style={style}
       data-aos="zoom-in-up"
       maxW="350px"
       borderRadius="12px"
-      _hover={{
-        transform: "translateY(-4%)",
-        transition: "0.2s",
-      }}
-      color="black"
-      // overflow="hidden"
-
+      overflow="hidden"
+      direction="column"
       bg={cardBg}
-      boxShadow={cardShadow}>
-      <Flex direction="column" p={6} textAlign="center" align="center">
-        <Text fontSize="1.5rem" fontWeight="600" mb={4}>
+      color="black"
+      boxShadow={cardShadow}
+      _hover={{
+        transform: "scale(1.05)",
+        transition: "0.3s",
+      }}>
+      <Box
+        bgGradient={bgColors}
+        bgSize="cover"
+        bgPos="center"
+        height="150px"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        position="relative">
+        <Text
+          fontSize="1.5rem"
+          fontWeight="600"
+          color="white"
+          textShadow="0px 0px 5px rgba(0, 0, 0, 0.5)">
           {cardTitle}
         </Text>
+      </Box>
+      <Flex direction="column" p={6} textAlign="center" align="center">
         <Text fontSize="1rem" fontWeight="400" mb={4}>
           {cardText}
         </Text>
-        <Flex gap={8} mb={6}>
+        <Flex gap={3} mb={6}>
           {logos.map((logo, index) => (
             <Image
               key={index}

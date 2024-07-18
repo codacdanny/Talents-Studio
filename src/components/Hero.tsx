@@ -4,6 +4,7 @@ import {
   Flex,
   Heading,
   Image,
+  Link,
   List,
   ListItem,
 } from "@chakra-ui/react";
@@ -29,10 +30,15 @@ const Hero: React.FC = () => {
               justifyContent="space-around"
               width="40vw"
               alignItems="center">
-              <ListItem>About</ListItem>
-
-              <ListItem>Contact us</ListItem>
-              <ListItem>Programs</ListItem>
+              <Link href="#about">
+                <ListItem>About</ListItem>
+              </Link>
+              <Link href="#contact">
+                <ListItem>Contact us</ListItem>
+              </Link>
+              <Link href="#card">
+                <ListItem>Programs</ListItem>
+              </Link>
             </List>
           </Flex>
           <Flex
@@ -48,7 +54,10 @@ const Hero: React.FC = () => {
                 stage and beyond.
               </Heading>
               <Flex>
-                <Button borderRadius="20px"> Start your Journey</Button>
+                <Button as="a" href="#about" borderRadius="20px">
+                  {" "}
+                  Start your Journey
+                </Button>
               </Flex>
             </Flex>
             <Image

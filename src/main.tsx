@@ -9,7 +9,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./theme.tsx";
 
 AOS.init({
-  duration: 1100, // Animation duration in milliseconds
+  duration: 500, // Animation duration in milliseconds
 });
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
