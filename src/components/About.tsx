@@ -96,6 +96,7 @@ const About = () => {
             my="1rem"
             as="a"
             href="#"
+            px={6}
             colorScheme="gray"
             outline="none"
             borderRadius="full">
@@ -127,6 +128,7 @@ const About = () => {
           <Button
             my="1rem"
             as="a"
+            px={6}
             href="#card"
             colorScheme="gray"
             outline="none"
@@ -166,8 +168,8 @@ const About = () => {
             About Us
           </Heading>
           <Text fontSize="1.5rem" fontWeight="400" marginBottom=".6rem">
-            NalediTech is your one-stop shop for tech services/all things tech.
-            With our Academy and Studio, we have got your needs covered.
+            NalediTech is your one-stop shop for all things tech. With our
+            Academy and Studio, we have got your needs covered.
           </Text>
 
           <Flex alignItems="center" gap=".5rem" marginBottom=".6rem">

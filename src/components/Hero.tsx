@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
                 stage and beyond.
               </Heading>
               <Flex>
-                <Button as="a" href="#about" borderRadius="20px">
+                <Button as="a" href="#about" borderRadius="20px" px={6}>
                   {" "}
                   Start your Journey
                 </Button>

@@ -35,7 +35,7 @@ const Card: FC<CardProps> = ({
   listFour,
   style,
 }) => {
-  const cardBg = useColorModeValue("white", "gray.800");
+  const cardBg = "rgba(255, 255, 255, 0.3)";
   const cardShadow = useColorModeValue("md", "dark-lg");
 
   return (
@@ -47,17 +47,13 @@ const Card: FC<CardProps> = ({
       overflow="hidden"
       direction="column"
       bg={cardBg}
-      color="black"
-      boxShadow={cardShadow}
-      _hover={{
-        transform: "scale(1.05)",
-        transition: "0.3s",
-      }}>
+      color="white"
+      boxShadow={cardShadow}>
       <Box
         bgGradient={bgColors}
         bgSize="cover"
         bgPos="center"
-        height="150px"
+        height="100px"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -91,16 +87,7 @@ const Card: FC<CardProps> = ({
           <ListItem>{listThree}</ListItem>
           <ListItem>{listFour}</ListItem>
         </List>
-        <Button
-          as="a"
-          href="#"
-          bg="#000"
-          color="white"
-          borderRadius="full"
-          px={6}
-          _hover={{
-            bg: "#515452",
-          }}>
+        <Button as="a" href="#" borderRadius="full" colorScheme="gray" px={6}>
           Get Started Now
         </Button>
       </Flex>
