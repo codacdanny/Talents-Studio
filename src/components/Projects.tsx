@@ -2,7 +2,6 @@ import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import nextjs from "../assets/nextJS.png";
 import html from "../assets/html.png";
-import express from "../assets/expressJS.png";
 import css from "../assets/css3.png";
 import flutter from "../assets/flutter.png";
 import Js from "../assets/javascript.png";
@@ -19,13 +18,12 @@ const Projects = () => {
       title: "Web Development",
       price: "N450,000",
       weeks: "6 months",
-      text: "Learn basic UI design concepts and technologies for building web applications",
+      text: "Learn basic UI design concepts and technologies for building complex web applications",
       listOne: "HTML, CSS, JavaScript",
       listTwo: "React",
       listThree: "Node.js, MongoDB",
       listFour: "Next.js",
-      bgColors: "green",
-      logos: [nextjs, html, css, express, Js],
+      logos: [nextjs, html, css, Js],
     },
     {
       title: "Mobile Development",
@@ -36,7 +34,6 @@ const Projects = () => {
       listTwo: "React Native",
       listThree: "Firebase",
       listFour: "NativeScript",
-      bgColors: "red",
       logos: [flutter, androidstudio, firebase, react],
     },
     {
@@ -48,14 +45,13 @@ const Projects = () => {
       listTwo: "Kubernetes",
       listThree: "GraphQL",
       listFour: "RabbitMQ",
-      bgColors: "brown",
       logos: [azure, aws, docker, kubernetes],
     },
   ];
 
   return (
     <Box marginY="9rem" position="relative">
-      <Heading className="mont" textAlign="center" marginY="2rem">
+      <Heading className="mont" textAlign="center" marginY="3rem">
         Become a Techie!
       </Heading>
       <Box
@@ -67,8 +63,6 @@ const Projects = () => {
         {cardData.map((card, index) => (
           <Card
             key={index}
-            bgColors={card.bgColors}
-            boxShadows="0 8px 32px 0 rgba(31, 38, 135, 0.37)"
             cardTitle={card.title}
             cardPrice={card.price}
             weeks={card.weeks}
