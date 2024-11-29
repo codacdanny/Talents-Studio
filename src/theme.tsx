@@ -11,6 +11,5 @@ const breakpoints = {
   "2xl": "1400px",
 };
 
-// 3. Extend the theme
 const theme = extendTheme({ breakpoints });
 export default theme;
