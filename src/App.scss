@@ -1,453 +1,453 @@
 @use "sass:math";
-// @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 body {
-  font-family: "Philosopher", sans-serif !important;
+  font-family: "Poppins", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-// Love dynamically typed text? You're gonna love this
-// Edit these strings to see them typed on the screen:
-$strings: ("WELCOME TO NALEDITECH" "EXPLORE!!!");
+// // Love dynamically typed text? You're gonna love this
+// // Edit these strings to see them typed on the screen:
+// $strings: ("WELCOME TO NALEDITECH" "EXPLORE!!!");
 
-// now for some timing (in seconds)
-$durCharFwd: 0.1; // character typed
-$durFullGap: 0.1; // time between typed/delete
-$durCharBwd: 0.08; // character deleted
-$durDoneGap: 0.1; // time between strings
+// // now for some timing (in seconds)
+// $durCharFwd: 0.1; // character typed
+// $durFullGap: 0.1; // time between typed/delete
+// $durCharBwd: 0.08; // character deleted
+// $durDoneGap: 0.1; // time between strings
 
-// initializing some variables and functions ✊🏼
-$charCount: 0;
-$durTotal: 0;
-@each $string in $strings {
-  $charCount: $charCount + str-length($string);
-  $durTotal: $durTotal +
-    (str-length($string) * ($durCharFwd + $durCharBwd)) +
-    $durFullGap +
-    $durDoneGap;
-}
-@function percent($string, $letter, $modifier) {
-  $stringsPast: $string - 1;
-  $time: 0;
-  @while $stringsPast > 0 {
-    $time: $time +
-      (
-        ($durCharFwd + $durCharBwd) * (str-length(nth($strings, $stringsPast)))
-      ) +
-      $durFullGap +
-      $durDoneGap;
-    $stringsPast: $stringsPast - 1;
-  }
-  @if $letter <= str-length(nth($strings, $string)) {
-    $time: $time + ($durCharFwd * ($letter - 1));
-  } @else {
-    $time: $time +
-      ($durCharFwd * str-length(nth($strings, $string))) +
-      $durFullGap +
-      ($durCharBwd * ($letter - str-length(nth($strings, $string))));
-  }
-  // Use math.div() to perform division
-  @return math.div($time, $durTotal) * 100 + $modifier + "%";
-}
+// // initializing some variables and functions ✊🏼
+// $charCount: 0;
+// $durTotal: 0;
+// @each $string in $strings {
+//   $charCount: $charCount + str-length($string);
+//   $durTotal: $durTotal +
+//     (str-length($string) * ($durCharFwd + $durCharBwd)) +
+//     $durFullGap +
+//     $durDoneGap;
+// }
+// @function percent($string, $letter, $modifier) {
+//   $stringsPast: $string - 1;
+//   $time: 0;
+//   @while $stringsPast > 0 {
+//     $time: $time +
+//       (
+//         ($durCharFwd + $durCharBwd) * (str-length(nth($strings, $stringsPast)))
+//       ) +
+//       $durFullGap +
+//       $durDoneGap;
+//     $stringsPast: $stringsPast - 1;
+//   }
+//   @if $letter <= str-length(nth($strings, $string)) {
+//     $time: $time + ($durCharFwd * ($letter - 1));
+//   } @else {
+//     $time: $time +
+//       ($durCharFwd * str-length(nth($strings, $string))) +
+//       $durFullGap +
+//       ($durCharBwd * ($letter - str-length(nth($strings, $string))));
+//   }
+//   // Use math.div() to perform division
+//   @return math.div($time, $durTotal) * 100 + $modifier + "%";
+// }
 
-$currentPercentage: 0;
-// now THIS is where the magic happens... ✨
-@keyframes typed {
-  @for $i from 1 through length($strings) {
-    // @for $j from 1 through (str-length(nth($strings, $i)) * 2 - 1) {
-    @for $j from 1 through (str-length(nth($strings, $i)) * 2) {
-      /* string #{$i}, char #{$j} */
-      @if $j < str-length(nth($strings, $i)) * 2 {
-        // not last character deleted
-        #{percent($i, $j, 0)},
-        #{percent($i, $j+1, -0.001)} {
-          @if $j <= str-length(nth($strings, $i)) {
-            content: quote(#{str_slice(nth($strings, $i), 1, $j)});
-          } @else {
-            content: quote(
-              #{str_slice(
-                  nth($strings, $i),
-                  1,
-                  str-length(nth($strings, $i)) -
-                    ($j - str-length(nth($strings, $i)))
-                )}
-            );
-          }
-        }
-      } @else {
-        @if $i < length($strings) {
-          // not last string
-          #{percent($i, $j, 0)},
-          #{percent($i+1, 1, -0.001)} {
-            content: "​"; // zero-width space to retain element height
-          }
-        } @else {
-          // last string
-          #{percent($i, $j, 0)},
-          100% {
-            content: "​"; // zero-width space to retain element height
-          }
-        }
-      }
-    }
-  }
-}
-@keyframes beam-blink {
-  75% {
-    border-color: transparent;
-  }
-}
-* {
-  backface-visibility: hidden;
-}
+// $currentPercentage: 0;
+// // now THIS is where the magic happens... ✨
+// @keyframes typed {
+//   @for $i from 1 through length($strings) {
+//     // @for $j from 1 through (str-length(nth($strings, $i)) * 2 - 1) {
+//     @for $j from 1 through (str-length(nth($strings, $i)) * 2) {
+//       /* string #{$i}, char #{$j} */
+//       @if $j < str-length(nth($strings, $i)) * 2 {
+//         // not last character deleted
+//         #{percent($i, $j, 0)},
+//         #{percent($i, $j+1, -0.001)} {
+//           @if $j <= str-length(nth($strings, $i)) {
+//             content: quote(#{str_slice(nth($strings, $i), 1, $j)});
+//           } @else {
+//             content: quote(
+//               #{str_slice(
+//                   nth($strings, $i),
+//                   1,
+//                   str-length(nth($strings, $i)) -
+//                     ($j - str-length(nth($strings, $i)))
+//                 )}
+//             );
+//           }
+//         }
+//       } @else {
+//         @if $i < length($strings) {
+//           // not last string
+//           #{percent($i, $j, 0)},
+//           #{percent($i+1, 1, -0.001)} {
+//             content: "​"; // zero-width space to retain element height
+//           }
+//         } @else {
+//           // last string
+//           #{percent($i, $j, 0)},
+//           100% {
+//             content: "​"; // zero-width space to retain element height
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// @keyframes beam-blink {
+//   75% {
+//     border-color: transparent;
+//   }
+// }
+// * {
+//   backface-visibility: hidden;
+// }
 
-.introID {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  background-image: radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
-    radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
-    radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
-    radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
-    radial-gradient(at 85% 9%, #db48d1 0px, transparent 50%);
-  background-repeat: repeat-y;
-  background-position: center center;
-  background-size: cover, 100% 3px;
-  font-size: calc(40px + 2vw);
-  font-family: "VT323", monospace, sans-serif !important;
-  color: #ffffff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  &::after {
-    content: "​";
-    position: relative;
-    top: -13px;
-    @media (max-width: 575px) {
-      top: -33px;
-    }
-    display: inline-block;
-    padding-right: 3px;
-    padding-right: calc(3px + 0.1vw);
-    border-right: 10px solid rgba(#ffffff, 0.75);
-    border-right: calc(1.1vw + 4px) solid rgba(#ffffff, 0.75);
-    text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
-    white-space: nowrap;
+// .introID {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: #000;
+//   background-image: radial-gradient(at 1% 60%, #4847db 0px, transparent 50%),
+//     radial-gradient(at 87% 48%, #4f48db 0px, transparent 50%),
+//     radial-gradient(at 77% 66%, #5148db 0px, transparent 50%),
+//     radial-gradient(at 66% 61%, #db48e1 0px, transparent 50%),
+//     radial-gradient(at 85% 9%, #db48d1 0px, transparent 50%);
+//   background-repeat: repeat-y;
+//   background-position: center center;
+//   background-size: cover, 100% 3px;
+//   font-size: calc(40px + 2vw);
+//   font-family: "VT323", monospace, sans-serif !important;
+//   color: #ffffff;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   &::after {
+//     content: "​";
+//     position: relative;
+//     top: -13px;
+//     @media (max-width: 575px) {
+//       top: -33px;
+//     }
+//     display: inline-block;
+//     padding-right: 3px;
+//     padding-right: calc(3px + 0.1vw);
+//     border-right: 10px solid rgba(#ffffff, 0.75);
+//     border-right: calc(1.1vw + 4px) solid rgba(#ffffff, 0.75);
+//     text-shadow: 0 0 5px rgba(51, 255, 51, 0.75);
+//     white-space: nowrap;
 
-    animation: typed #{$durTotal + "s"} linear 0s 1, beam-blink 1s infinite;
-  }
-}
+//     animation: typed #{$durTotal + "s"} linear 0s 1, beam-blink 1s infinite;
+//   }
+// }
 
-.anime2 {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow-y: hidden !important;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 90;
-  animation: animate2 7.2s 1 linear;
-  transform-origin: center;
-  transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
-  animation-delay: 0s;
-}
+// .anime2 {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   overflow-y: hidden !important;
+//   top: 0;
+//   left: 0;
+//   opacity: 0;
+//   visibility: hidden;
+//   z-index: 90;
+//   animation: animate2 7.2s 1 linear;
+//   transform-origin: center;
+//   transition: all cubic-bezier(0.25, 0.1, 0.25, 1);
+//   animation-delay: 0s;
+// }
 
-@keyframes animate2 {
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
-  90% {
-    opacity: 1;
-  }
+// @keyframes animate2 {
+//   0% {
+//     opacity: 1;
+//     visibility: visible;
+//   }
+//   90% {
+//     opacity: 1;
+//   }
 
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+//   100% {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+// }
 
-.hero {
-  z-index: 50;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
+// .hero {
+//   z-index: 50;
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+// }
 
-@keyframes animate3 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes animate3 {
+//   0% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
-.main {
-  position: relative;
-  z-index: 90;
-}
-@keyframes stars {
-  0% {
-    background: powderblue;
-    height: 1px;
-    width: 1px;
-    box-shadow: 0px 0px 10px white;
-  }
-  10% {
-    background: #b0e5de;
-  }
-  20% {
-    background: #b0e5cc;
-  }
-  30% {
-    background: #cce5b0;
-  }
-  40% {
-    background: #dae5b0;
-  }
-  50% {
-    background: #e5ddb0;
-    width: 4px;
-    height: 4px;
-    box-shadow: 0px 0px 10px #d3bd3d;
-  }
-  100% {
-    width: 1px;
-    height: 1px;
-    background: powderblue;
-    box-shadow: 0px 0px 10px white;
-  }
-}
+// .main {
+//   position: relative;
+//   z-index: 90;
+// }
+// @keyframes stars {
+//   0% {
+//     background: powderblue;
+//     height: 1px;
+//     width: 1px;
+//     box-shadow: 0px 0px 10px white;
+//   }
+//   10% {
+//     background: #b0e5de;
+//   }
+//   20% {
+//     background: #b0e5cc;
+//   }
+//   30% {
+//     background: #cce5b0;
+//   }
+//   40% {
+//     background: #dae5b0;
+//   }
+//   50% {
+//     background: #e5ddb0;
+//     width: 4px;
+//     height: 4px;
+//     box-shadow: 0px 0px 10px #d3bd3d;
+//   }
+//   100% {
+//     width: 1px;
+//     height: 1px;
+//     background: powderblue;
+//     box-shadow: 0px 0px 10px white;
+//   }
+// }
 
-.star {
-  z-index: -13; /* Ensure stars are behind the content */
-  height: 1px;
-  width: 1px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px white;
-  background: transparent;
-  position: fixed;
-  top: -5%;
+// .star {
+//   z-index: -13; /* Ensure stars are behind the content */
+//   height: 1px;
+//   width: 1px;
+//   border-radius: 5px;
+//   box-shadow: 0px 0px 10px white;
+//   background: transparent;
+//   position: fixed;
+//   top: -5%;
 
-  &.pulse {
-    animation: stars 2s infinite;
-  }
-}
+//   &.pulse {
+//     animation: stars 2s infinite;
+//   }
+// }
 
-.image-container:hover .skills-list {
-  opacity: 1;
-  visibility: visible;
-}
+// .image-container:hover .skills-list {
+//   opacity: 1;
+//   visibility: visible;
+// }
 
-@property --num {
-  syntax: "<integer>";
-  initial-value: 5;
-  inherits: false;
-}
+// @property --num {
+//   syntax: "<integer>";
+//   initial-value: 5;
+//   inherits: false;
+// }
 
-.twoHuns {
-  animation: counter 4s forwards ease-in-out;
-  counter-reset: num var(--num);
-}
-.twoHuns::after {
-  content: counter(num);
-}
+// .twoHuns {
+//   animation: counter 4s forwards ease-in-out;
+//   counter-reset: num var(--num);
+// }
+// .twoHuns::after {
+//   content: counter(num);
+// }
 
-@keyframes counter {
-  from {
-    --num: 5;
-  }
-  to {
-    --num: 200;
-  }
-}
+// @keyframes counter {
+//   from {
+//     --num: 5;
+//   }
+//   to {
+//     --num: 200;
+//   }
+// }
 
-@property --num1 {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
-}
+// @property --num1 {
+//   syntax: "<integer>";
+//   initial-value: 0;
+//   inherits: false;
+// }
 
-.twoHuns1 {
-  animation: counter1 4s forwards ease-in-out;
-  counter-reset: num1 var(--num1);
-}
-.twoHuns1::after {
-  content: counter1(num1);
-}
+// .twoHuns1 {
+//   animation: counter1 4s forwards ease-in-out;
+//   counter-reset: num1 var(--num1);
+// }
+// .twoHuns1::after {
+//   content: counter1(num1);
+// }
 
-@keyframes counter1 {
-  from {
-    --num1: 0;
-  }
-  to {
-    --num1: 100;
-  }
-}
+// @keyframes counter1 {
+//   from {
+//     --num1: 0;
+//   }
+//   to {
+//     --num1: 100;
+//   }
+// }
 
-@property --num2 {
-  syntax: "<integer>";
-  initial-value: 2;
-  inherits: false;
-}
+// @property --num2 {
+//   syntax: "<integer>";
+//   initial-value: 2;
+//   inherits: false;
+// }
 
-.twoHuns2 {
-  animation: counter2 4s forwards ease-in-out;
-  counter-reset: num2 var(--num2);
-}
-.twoHuns2::after {
-  content: counter2(num2);
-}
+// .twoHuns2 {
+//   animation: counter2 4s forwards ease-in-out;
+//   counter-reset: num2 var(--num2);
+// }
+// .twoHuns2::after {
+//   content: counter2(num2);
+// }
 
-@keyframes counter2 {
-  from {
-    --num2: 2;
-  }
-  to {
-    --num2: 10;
-  }
-}
+// @keyframes counter2 {
+//   from {
+//     --num2: 2;
+//   }
+//   to {
+//     --num2: 10;
+//   }
+// }
 
-@property --num3 {
-  syntax: "<integer>";
-  initial-value: 3;
-  inherits: false;
-}
-.twoHuns3 {
-  animation: counter3 4s forwards ease-in-out;
-  counter-reset: num3 var(--num3);
-}
-.twoHuns3::after {
-  content: counter3(num3);
-}
+// @property --num3 {
+//   syntax: "<integer>";
+//   initial-value: 3;
+//   inherits: false;
+// }
+// .twoHuns3 {
+//   animation: counter3 4s forwards ease-in-out;
+//   counter-reset: num3 var(--num3);
+// }
+// .twoHuns3::after {
+//   content: counter3(num3);
+// }
 
-@keyframes counter3 {
-  from {
-    --num3: 3;
-  }
-  to {
-    --num3: 20;
-  }
-}
+// @keyframes counter3 {
+//   from {
+//     --num3: 3;
+//   }
+//   to {
+//     --num3: 20;
+//   }
+// }
 
-.main__bg {
-  background-image: linear-gradient(-60deg, #404258 50%, #6b728e 50%);
-  animation: slide 3s ease-in-out infinite alternate;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: -50%;
-  right: -50%;
-  opacity: 0.5;
-  z-index: -1;
-}
+// .main__bg {
+//   background-image: linear-gradient(-60deg, #404258 50%, #6b728e 50%);
+//   animation: slide 3s ease-in-out infinite alternate;
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: -50%;
+//   right: -50%;
+//   opacity: 0.5;
+//   z-index: -1;
+// }
 
-.layer1 {
-  animation-direction: alternate-reverse;
-  animation-duration: 4s;
-}
+// .layer1 {
+//   animation-direction: alternate-reverse;
+//   animation-duration: 4s;
+// }
 
-.layer2 {
-  animation-duration: 5s;
-}
+// .layer2 {
+//   animation-duration: 5s;
+// }
 
-@keyframes slide {
-  0% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(25%);
-  }
-}
+// @keyframes slide {
+//   0% {
+//     transform: translateX(-25%);
+//   }
+//   100% {
+//     transform: translateX(25%);
+//   }
+// }
 
-.bounce {
-  animation-name: bounce-1;
-  animation-timing-function: linear;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  transform-origin: bottom;
-}
+// .bounce {
+//   animation-name: bounce-1;
+//   animation-timing-function: linear;
+//   animation-duration: 4s;
+//   animation-iteration-count: infinite;
+//   transform-origin: bottom;
+// }
 
-@keyframes bounce-1 {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes bounce-1 {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-20px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
 
-.iconStyle {
-  color: black;
-  background: #eee;
-}
+// .iconStyle {
+//   color: black;
+//   background: #eee;
+// }
 
-.glass {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
+// .glass {
+//   background: rgba(255, 255, 255, 0.2);
+//   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+//   backdrop-filter: blur(3.5px);
+//   -webkit-backdrop-filter: blur(3.5px);
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 2px;
-}
+//   border: 1px solid rgba(255, 255, 255, 0.18);
+//   border-radius: 2px;
+// }
 
-.purple-glass {
-  background: rgba(228, 150, 228, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(3.5px);
-  -webkit-backdrop-filter: blur(3.5px);
+// .purple-glass {
+//   background: rgba(228, 150, 228, 0.2);
+//   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+//   backdrop-filter: blur(3.5px);
+//   -webkit-backdrop-filter: blur(3.5px);
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
+//   border: 1px solid rgba(255, 255, 255, 0.18);
+// }
 
-.card-container {
-  // align-items: center;
+// .card-container {
+//   // align-items: center;
 
-  transform: translateY(2%);
-  transition: 700ms ease-in-out transform;
-}
-.card-container:hover {
-  transform: translateY(-2%);
-}
+//   transform: translateY(2%);
+//   transition: 700ms ease-in-out transform;
+// }
+// .card-container:hover {
+//   transform: translateY(-2%);
+// }
 
-/* .page img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
+// /* .page img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// } */
 
-/* .right-page {
-  z-index: 5;
-} */
+// /* .right-page {
+//   z-index: 5;
+// } */
 
-.page-2 {
-  transition: 700ms ease-in-out transform;
-  transform-origin: top;
-  transform: rotateX(180deg);
-}
-.page-2 {
-  transform: rotateX(180deg) translateZ(1px);
-  z-index: -1;
-}
+// .page-2 {
+//   transition: 700ms ease-in-out transform;
+//   transform-origin: top;
+//   transform: rotateX(180deg);
+// }
+// .page-2 {
+//   transform: rotateX(180deg) translateZ(1px);
+//   z-index: -1;
+// }
 
-.card-container:hover .page-2 {
-  transform: scale(1) translateY(-1px);
-}
+// .card-container:hover .page-2 {
+//   transform: scale(1) translateY(-1px);
+// }
 
-/* TYPOGRAPHY */
-.mont {
-  font-family: "Montserrat" !important;
-}
+// /* TYPOGRAPHY */
+// .mont {
+//   font-family: "Montserrat" !important;
+// }
