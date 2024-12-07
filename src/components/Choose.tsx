@@ -38,7 +38,7 @@ const Choose = () => {
       <Flex
         bgImage={bgImage}
         bgSize="cover"
-        height="50vh"
+        height="70vh"
         width="100%"
         paddingTop="20%"
         px="1.5rem"
@@ -98,6 +98,7 @@ const Choose = () => {
           </Text>
         </Flex>
       </Flex>
+      <Flex></Flex>
     </Container>
   );
 };
