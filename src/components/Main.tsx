@@ -6,6 +6,8 @@ import Clients from "./Clients";
 import Testimonial from "./Testimonial";
 import Collaborate from "./Collaborate";
 import Techie from "./Techie";
+import Faq from "./Faq";
+import Footer from "./Footer";
 
 const Main = () => {
   return (
@@ -18,6 +20,8 @@ const Main = () => {
       <Testimonial />
       <Collaborate />
       <Techie />
+      <Faq />
+      <Footer />
     </Box>
   );
 };

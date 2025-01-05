@@ -4,6 +4,26 @@ import theme from "../theme";
 const Techie = () => {
   return (
     <Container maxWidth="container.xl">
+      <Flex flexDir="column" width="100%" alignItems="center" color="text">
+        <Box
+          bgColor="primaryBlue"
+          width="fit-content"
+          borderRadius={theme.customBorderRadius}
+          padding=".5rem 1rem"
+          fontWeight={500}
+          mt={40}
+          ml="1.5rem"
+          color="background">
+          BECOME A TECHIE
+        </Box>
+        <Heading mt={6} size="md" textAlign="center">
+          JOIN US
+        </Heading>
+        <Text textAlign="center" mt={4} width="50%">
+          {`We’ve helped young people develop their  career with us by introducing them to skills that make them financially independent`}
+        </Text>
+      </Flex>
+
       <Box
         bgColor="secondaryBlue" // Blue background
         color="white"
