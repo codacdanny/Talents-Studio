@@ -16,8 +16,8 @@ import clientImage from "../assets/clientImage.jpg";
 
 const Clients = () => {
   return (
-    <Container maxWidth="container.xl" mb={20}>
-      <Box mt={100} height="100vh">
+    <Container maxWidth="container.xl" mb={0}>
+      <Box mt={10} height="fit-content">
         <Flex flexDir="column" width="100%" alignItems="center" color="text">
           <Box
             bgColor="primaryBlue"
