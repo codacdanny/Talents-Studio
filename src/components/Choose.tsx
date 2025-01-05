@@ -2,10 +2,14 @@ import {
   Avatar,
   AvatarGroup,
   Box,
+  Button,
   Container,
   Flex,
   Heading,
+  Image,
+  ListItem,
   Text,
+  UnorderedList,
   VStack,
 } from "@chakra-ui/react";
 import avatar1 from "../assets/avatar1.jpg";
@@ -13,6 +17,10 @@ import avatar2 from "../assets/avatar2.jpg";
 import avatar3 from "../assets/avatar3.jpg";
 import avatar4 from "../assets/avatar4.jpg";
 import bgImage from "../assets/chooseUsBg1.jpg";
+import bgImage2 from "../assets/chooseUsBg2.jpg";
+import weblogo from "../assets/webdevlogo.jpg";
+import mobilelogo from "../assets/mobilelogo.jpg";
+import microserviceslogo from "../assets/microserviceslogo.jpg";
 import theme from "../theme";
 
 const Choose = () => {
@@ -35,17 +43,18 @@ const Choose = () => {
           <Avatar name="Prosper Otemuyiwa" src={avatar4} />
         </AvatarGroup>
       </Flex>
+      {/* WHY CHOOSE US SECTION */}
       <Flex
         bgImage={bgImage}
         bgSize="cover"
-        height="70vh"
+        height="100%"
         width="100%"
         paddingTop="20%"
         px="1.5rem"
         paddingBottom="1rem"
         gap={12}
         justifyContent="space-between">
-        <VStack align="left" spacing={16}>
+        <VStack align="left" gap={16}>
           <Box
             bgColor="primaryBlue"
             width="fit-content"
@@ -98,7 +107,149 @@ const Choose = () => {
           </Text>
         </Flex>
       </Flex>
-      <Flex></Flex>
+      {/* SOLUTIONS WE OFFER SECTION */}
+      <Box
+        bgColor="bgGrey"
+        width="fit-content"
+        borderRadius={theme.customBorderRadius}
+        padding=".5rem 1rem"
+        fontWeight={500}
+        mt={20}
+        ml="1.5rem"
+        color="text">
+        Why Choose Us
+      </Box>
+      <Box
+        bgImage={bgImage2}
+        bgRepeat="no-repeat"
+        height="55vh"
+        width="100%"
+        px="1.5rem"
+        paddingTop="3%"
+        paddingBottom="1rem"
+        mb={12}>
+        <Flex mb={10} width="100%" mt={6} justifyContent="space-between">
+          <Heading fontSize="xl" color="background">
+            WE OFFER <br /> LEADING <br /> SOLUTIONS
+          </Heading>
+          <Box width="60%" gap={8}>
+            <Text color="background">
+              {` At NalediTech we specialize in delivering tailored software
+              solutions, providing customization and personalization to meet the
+              diverse needs of businesses. Our offerings ensure seamless
+              integration, optimal performance, and a personalized approach that
+              aligns with your specific requirements. Here’s what we offer for
+              you.`}
+            </Text>
+          </Box>
+        </Flex>
+
+        <Flex gap={4} justifyContent="space-evenly">
+          <Flex
+            flexDir="column"
+            gap={8}
+            bgColor="text"
+            color="background"
+            maxWidth="350px"
+            height="fit-content"
+            borderRadius={theme.customBorderRadius}
+            padding="1rem">
+            <Heading textAlign="center" size="md" color="background">
+              NalediTech Studio
+            </Heading>
+            <Text fontWeight={300}>Do you...</Text>
+            <UnorderedList spacing={6}>
+              <ListItem>Have a project idea in need of Devs?</ListItem>
+              <ListItem>Need maintenance on existing projects?</ListItem>
+              <ListItem>Require consultation?</ListItem>
+            </UnorderedList>
+            <Text>
+              Be it a team or a single techie, NalediTech Studio gives you
+              access to all the talent you need for your project. Let us know
+              what you want to build.
+            </Text>
+          </Flex>
+
+          <Flex
+            borderRadius={theme.customBorderRadius}
+            boxShadow="md"
+            padding="1rem"
+            bg="background"
+            color="text"
+            flexDir="column"
+            gap={8}
+            alignItems="center"
+            justifyContent="space-between"
+            height="18rem">
+            <Box>
+              <Image src={weblogo} alt="web dev logo" />
+            </Box>
+            <Heading textAlign="center" fontSize="sm">
+              Web <br /> Development
+            </Heading>
+
+            <Button
+              colorScheme="blue"
+              color="background"
+              fontSize="medium"
+              borderRadius={theme.customBorderRadius}>
+              Get Started
+            </Button>
+          </Flex>
+          <Flex
+            borderRadius={theme.customBorderRadius}
+            boxShadow="md"
+            padding="1rem"
+            bg="background"
+            color="text"
+            flexDir="column"
+            gap={8}
+            alignItems="center"
+            justifyContent="space-between"
+            height="18rem">
+            <Box>
+              <Image src={mobilelogo} alt="web dev logo" />
+            </Box>
+            <Heading textAlign="center" fontSize="sm">
+              Mobile <br /> Development
+            </Heading>
+
+            <Button
+              colorScheme="blue"
+              color="background"
+              fontSize="medium"
+              borderRadius={theme.customBorderRadius}>
+              Get Started
+            </Button>
+          </Flex>
+          <Flex
+            borderRadius={theme.customBorderRadius}
+            boxShadow="md"
+            padding="1rem"
+            bg="background"
+            color="text"
+            flexDir="column"
+            gap={8}
+            alignItems="center"
+            justifyContent="space-between"
+            height="18rem">
+            <Box>
+              <Image src={microserviceslogo} alt="web dev logo" />
+            </Box>
+            <Heading textAlign="center" fontSize="sm">
+              Micro <br /> Services
+            </Heading>
+
+            <Button
+              colorScheme="blue"
+              color="background"
+              fontSize="medium"
+              borderRadius={theme.customBorderRadius}>
+              Get Started
+            </Button>
+          </Flex>
+        </Flex>
+      </Box>
     </Container>
   );
 };

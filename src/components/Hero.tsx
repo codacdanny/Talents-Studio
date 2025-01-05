@@ -20,18 +20,21 @@ const Hero: React.FC = () => {
         height="90vh"
         alignItems="center"
         justifyContent="center"
-        px="2rem">
+        px="2rem"
+      >
         <Container maxWidth="container.xl">
           <Flex
             alignItems="center"
             justifyContent="space-between"
             gap="2rem"
-            width="100%">
+            width="100%"
+          >
             <Flex
               direction="column"
               alignItems="flex-start"
               maxWidth="600px"
-              gap="1.5rem">
+              gap="1.5rem"
+            >
               {/* Heading */}
               <Text fontSize="5xl" fontWeight="bold" lineHeight="1.2" mb="3rem">
                 FIND THE <span style={{ color: "#1E57D1" }}>RIGHT</span> TALENT
@@ -45,10 +48,11 @@ const Hero: React.FC = () => {
                 bg="gray.100"
                 borderRadius="full"
                 p="0.5rem"
-                width="90%">
+                width="90%"
+              >
                 <Input
                   placeholder="Enter your problem"
-                  variant="unstyled"
+                  variant="flushed"
                   px="1rem"
                   flex="1"
                 />
@@ -57,7 +61,8 @@ const Hero: React.FC = () => {
                   color="white"
                   borderRadius="full"
                   _hover={{ bg: "#164ba0" }}
-                  px="4">
+                  px="4"
+                >
                   Let's Talk
                 </Button>
               </Flex>
