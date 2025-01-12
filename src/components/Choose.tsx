@@ -31,16 +31,21 @@ const Choose = () => {
         my={4}
         width="100%"
         justifyContent="space-between"
-        alignItems="center">
-        <Box width="80%" height="12px" bgColor="secondaryBlue" />
+        alignItems="center"
+      >
+        <Box
+          width={{ base: "10%", md: "30%", lg: "50%", xl: "70%" }}
+          height="12px"
+          bgColor="secondaryBlue"
+        />
         <Text fontWeight={500} fontSize="md">
           Our Team
         </Text>
-        <AvatarGroup size="md" max={5}>
-          <Avatar name="Ryan Florence" src={avatar1} />
-          <Avatar name="Segun Adebayo" src={avatar2} />
+        <AvatarGroup size="lg" max={5}>
           <Avatar name="Kent Dodds" src={avatar3} />
+          <Avatar name="Ryan Florence" src={avatar1} />
           <Avatar name="Prosper Otemuyiwa" src={avatar4} />
+          <Avatar name="Segun Adebayo" src={avatar2} />
         </AvatarGroup>
       </Flex>
       {/* WHY CHOOSE US SECTION */}
@@ -49,19 +54,22 @@ const Choose = () => {
         bgSize="cover"
         height="100%"
         width="100%"
-        paddingTop="20%"
+        paddingTop={{ base: "2%", md: "8%", lg: "15%", xl: "20%" }}
         px="1.5rem"
         paddingBottom="1rem"
         gap={12}
-        justifyContent="space-between">
+        justifyContent="space-between"
+        flexDir={{ base: "column", lg: "row" }}
+      >
         <VStack align="left" gap={16}>
           <Box
             bgColor="primaryBlue"
             width="fit-content"
             borderRadius={theme.customBorderRadius}
             padding=".5rem 1rem"
-            mt={-8}
-            color="background">
+            mt={{ base: 2, xl: -8 }}
+            color="background"
+          >
             Why Choose Us
           </Box>
           <Box
@@ -71,7 +79,8 @@ const Choose = () => {
             padding=".8rem 1.8rem"
             color="background"
             fontSize="2xl"
-            fontWeight={600}>
+            fontWeight={600}
+          >
             OUR <br /> ADVANTAGES
           </Box>
         </VStack>
@@ -83,7 +92,8 @@ const Choose = () => {
           borderRadius={theme.customBorderRadius}
           padding=".8rem 1.8rem"
           color="text"
-          fontSize="md">
+          fontSize="md"
+        >
           <Heading fontSize="xl">Team of Experts</Heading>
           <Text>
             Our expert team of tech enthusiasts and industry veterans, dedicated
@@ -98,7 +108,8 @@ const Choose = () => {
           borderRadius={theme.customBorderRadius}
           padding=".8rem 1.8rem"
           color="text"
-          fontSize="md">
+          fontSize="md"
+        >
           <Heading fontSize="xl">Personalization</Heading>
           <Text>
             We excel in tailoring solutions to your unique needs, ensuring a
@@ -116,23 +127,32 @@ const Choose = () => {
         fontWeight={500}
         mt={20}
         ml="1.5rem"
-        color="text">
+        color="text"
+      >
         Why Choose Us
       </Box>
       <Box
         bgImage={bgImage2}
         bgRepeat="no-repeat"
-        height="55vh"
+        height={{ base: "100%", dxl: "55vh" }}
         width="100%"
         px="1.5rem"
         paddingTop="3%"
         paddingBottom="1rem"
-        mb={12}>
-        <Flex mb={10} width="100%" mt={6} justifyContent="space-between">
-          <Heading fontSize="xl" color="background">
+        mb={12}
+      >
+        <Flex
+          mb={10}
+          width="100%"
+          mt={6}
+          justifyContent="space-between"
+          gap={6}
+          flexDir={{ base: "column", lg: "row" }}
+        >
+          <Heading fontSize="xl" py={2} color="background">
             WE OFFER <br /> LEADING <br /> SOLUTIONS
           </Heading>
-          <Box width="60%" gap={8}>
+          <Box width={{ base: "100%", xl: "60%" }} gap={8}>
             <Text color="background">
               {` At NalediTech we specialize in delivering tailored software
               solutions, providing customization and personalization to meet the
@@ -144,16 +164,22 @@ const Choose = () => {
           </Box>
         </Flex>
 
-        <Flex gap={4} justifyContent="space-evenly">
+        <Flex
+          gap={4}
+          justifyContent="space-evenly"
+          flexDir={{ base: "column", xl: "row" }}
+        >
           <Flex
             flexDir="column"
             gap={8}
             bgColor="text"
             color="background"
-            maxWidth="350px"
+            maxWidth={{ base: "100%", xl: "350px" }}
             height="fit-content"
             borderRadius={theme.customBorderRadius}
-            padding="1rem">
+            padding="1rem"
+            mb={4}
+          >
             <Heading textAlign="center" size="md" color="background">
               NalediTech Studio
             </Heading>
@@ -180,7 +206,8 @@ const Choose = () => {
             gap={8}
             alignItems="center"
             justifyContent="space-between"
-            height="18rem">
+            height="18rem"
+          >
             <Box>
               <Image src={weblogo} alt="web dev logo" />
             </Box>
@@ -192,7 +219,8 @@ const Choose = () => {
               colorScheme="blue"
               color="background"
               fontSize="medium"
-              borderRadius={theme.customBorderRadius}>
+              borderRadius={theme.customBorderRadius}
+            >
               Get Started
             </Button>
           </Flex>
@@ -206,7 +234,8 @@ const Choose = () => {
             gap={8}
             alignItems="center"
             justifyContent="space-between"
-            height="18rem">
+            height="18rem"
+          >
             <Box>
               <Image src={mobilelogo} alt="web dev logo" />
             </Box>
@@ -218,7 +247,8 @@ const Choose = () => {
               colorScheme="blue"
               color="background"
               fontSize="medium"
-              borderRadius={theme.customBorderRadius}>
+              borderRadius={theme.customBorderRadius}
+            >
               Get Started
             </Button>
           </Flex>
@@ -232,7 +262,8 @@ const Choose = () => {
             gap={8}
             alignItems="center"
             justifyContent="space-between"
-            height="18rem">
+            height="18rem"
+          >
             <Box>
               <Image src={microserviceslogo} alt="web dev logo" />
             </Box>
@@ -244,7 +275,8 @@ const Choose = () => {
               colorScheme="blue"
               color="background"
               fontSize="medium"
-              borderRadius={theme.customBorderRadius}>
+              borderRadius={theme.customBorderRadius}
+            >
               Get Started
             </Button>
           </Flex>
