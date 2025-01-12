@@ -12,31 +12,39 @@ import hero from "../assets/heroImage.jpg";
 
 const Hero: React.FC = () => {
   return (
-    <>
+    <Flex flexDir="column">
       <Nav />
       <Flex
         as="section"
         width="100%"
-        height="90vh"
+        height="100%"
+        overflowY="scroll"
         alignItems="center"
         justifyContent="center"
-        px="2rem"
+        px={{ base: "1rem", md: "2rem" }}
       >
         <Container maxWidth="container.xl">
           <Flex
             alignItems="center"
             justifyContent="space-between"
-            gap="2rem"
+            gap={{ base: "1rem", md: "2rem" }}
             width="100%"
+            py={6}
+            flexDirection={{ base: "column", lg: "row" }}
           >
             <Flex
               direction="column"
               alignItems="flex-start"
-              maxWidth="600px"
+              maxWidth={{ base: "100%", lg: "600px" }}
               gap="1.5rem"
             >
               {/* Heading */}
-              <Text fontSize="5xl" fontWeight="bold" lineHeight="1.2" mb="3rem">
+              <Text
+                fontSize={{ base: "3xl", lg: "5xl" }}
+                fontWeight="bold"
+                lineHeight="1.2"
+                mb="3rem"
+              >
                 FIND THE <span style={{ color: "#1E57D1" }}>RIGHT</span> TALENT
                 TO HANDLE YOUR <span style={{ color: "#1E57D1" }}>TECH</span>{" "}
                 PROJECTS
@@ -48,7 +56,7 @@ const Hero: React.FC = () => {
                 bg="gray.100"
                 borderRadius="full"
                 p="0.5rem"
-                width="90%"
+                width="100%"
               >
                 <Input
                   placeholder="Enter your problem"
@@ -61,25 +69,25 @@ const Hero: React.FC = () => {
                   color="white"
                   borderRadius="full"
                   _hover={{ bg: "#164ba0" }}
-                  px="4"
+                  px={{ base: "2", lg: "4" }}
                 >
                   Let's Talk
                 </Button>
               </Flex>
 
               {/* Description */}
-              <Text fontWeight={500} color="gray.600" width="80%">
+              <Text fontWeight={500} color="gray.600" width="100%">
                 Get the right developer or team to get your million-dollar idea
                 to MVP stage and beyond.
               </Text>
             </Flex>
-            <Box>
-              <Image src={hero} alt="hero image" />
+            <Box width={{ base: "100%", lg: "auto" }}>
+              <Image src={hero} alt="hero image" objectFit="cover" />
             </Box>
           </Flex>
         </Container>
       </Flex>
-    </>
+    </Flex>
   );
 };
 
