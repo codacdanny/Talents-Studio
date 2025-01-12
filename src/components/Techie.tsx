@@ -12,14 +12,14 @@ const Techie = () => {
           padding=".5rem 1rem"
           fontWeight={500}
           mt={40}
-          ml="1.5rem"
-          color="background">
+          color="background"
+        >
           BECOME A TECHIE
         </Box>
         <Heading mt={6} size="md" textAlign="center">
           JOIN US
         </Heading>
-        <Text textAlign="center" mt={4} width="50%">
+        <Text textAlign="center" mt={4} width={{ base: "100%", xl: "50%" }}>
           {`We’ve helped young people develop their  career with us by introducing them to skills that make them financially independent`}
         </Text>
       </Flex>
@@ -30,13 +30,16 @@ const Techie = () => {
         p="1.5rem"
         py={12}
         borderRadius={theme.customBorderRadius}
-        mt={10}>
+        mt={10}
+      >
         <Flex
           width="100%"
           alignItems="center"
           gap={10}
-          justifyContent="space-between">
-          <Flex width="60%" flexDir="column" gap={6}>
+          justifyContent="space-between"
+          flexDir={{ base: "column", lg: "row" }}
+        >
+          <Flex width={{ base: "100%", xl: "60%" }} flexDir="column" gap={6}>
             <Heading color="bg" size="md" mb={4}>
               WEB DEVELOPMENT
             </Heading>
@@ -55,12 +58,13 @@ const Techie = () => {
               color="text"
               colorScheme="whiteAlpha"
               variant="solid"
-              borderRadius={theme.customBorderRadius}>
+              borderRadius={theme.customBorderRadius}
+            >
               Get Started Now
             </Button>
           </Flex>
           <Box height="4px" bgColor="background" width="6rem" />
-          <Flex width="40%" alignItems="right" mt={6}>
+          <Flex width={{ base: "100%", xl: "40%" }} alignItems="right" mt={6}>
             <Text fontWeight="bold" fontSize="md">
               HTML, CSS, JavaScript
               <br />
@@ -73,7 +77,7 @@ const Techie = () => {
           </Flex>
         </Flex>
       </Box>
-      <Flex gap={4} mt={10}>
+      <Flex gap={4} mt={10} flexDir={{ base: "column", xl: "row" }}>
         <Flex
           flexDir="column"
           gap={4}
@@ -82,7 +86,8 @@ const Techie = () => {
           p="1.5rem"
           py={12}
           borderRadius={theme.customBorderRadius}
-          mt={4}>
+          mt={4}
+        >
           <Heading color="bg" size="md" mb={4}>
             MOBILE DEVELOPMENT{" "}
           </Heading>
@@ -110,7 +115,8 @@ const Techie = () => {
             color="text"
             colorScheme="whiteAlpha"
             variant="solid"
-            borderRadius={theme.customBorderRadius}>
+            borderRadius={theme.customBorderRadius}
+          >
             Get Started Now
           </Button>
         </Flex>
@@ -122,7 +128,8 @@ const Techie = () => {
           p="1.5rem"
           py={12}
           borderRadius={theme.customBorderRadius}
-          mt={4}>
+          mt={4}
+        >
           <Heading color="bg" size="md" mb={4}>
             MICRO SERVICES
           </Heading>
@@ -150,7 +157,8 @@ const Techie = () => {
             color="text"
             colorScheme="whiteAlpha"
             variant="solid"
-            borderRadius={theme.customBorderRadius}>
+            borderRadius={theme.customBorderRadius}
+          >
             Get Started Now
           </Button>
         </Flex>

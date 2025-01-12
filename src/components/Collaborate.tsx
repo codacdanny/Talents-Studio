@@ -18,8 +18,13 @@ const Collaborate = () => {
         bgColor="secondaryBlue"
         p="1.5rem"
         borderRadius={theme.customBorderRadius}
-        my={16}>
-        <Grid columnGap={20} templateColumns="repeat(2, 1fr)" gap={6}>
+        my={16}
+      >
+        <Grid
+          columnGap={20}
+          templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+          gap={6}
+        >
           <GridItem>
             <Flex height="100%" flexDir="column" justifyContent="space-evenly">
               <Heading color="background" size="md">
@@ -35,7 +40,8 @@ const Collaborate = () => {
               <Box
                 bg="background"
                 mt={10}
-                borderRadius={theme.customBorderRadius}>
+                borderRadius={theme.customBorderRadius}
+              >
                 {/* INNOVATIVE SOLUTIONS */}
                 <Flex direction="column" gap={4}>
                   <Box p={4}>
@@ -83,7 +89,7 @@ const Collaborate = () => {
               </Box>
             </Flex>
           </GridItem>
-          <GridItem mt={10}>
+          <GridItem mt={10} placeItems="center">
             <Image bgSize="cover" height="80%" src={woman} alt="woman" />
           </GridItem>
         </Grid>

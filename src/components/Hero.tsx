@@ -18,7 +18,6 @@ const Hero: React.FC = () => {
         as="section"
         width="100%"
         height="100%"
-        overflowY="scroll"
         alignItems="center"
         justifyContent="center"
         px={{ base: "1rem", md: "2rem" }}

@@ -23,7 +23,6 @@ const Faq = () => {
           padding=".5rem 1rem"
           fontWeight={500}
           mt={40}
-          ml="1.5rem"
           color="background"
         >
           HAVE A QUESTION?
@@ -31,7 +30,7 @@ const Faq = () => {
         <Heading mt={6} size="md" textAlign="center">
           FREQUENTLY ASKED <br /> QUESTIONS
         </Heading>
-        <Text textAlign="center" mt={4} width="50%">
+        <Text textAlign="center" mt={4} width={{ base: "100%", xl: "50%" }}>
           {`We’ve helped big-name brands elevate their functinality and
           consistently achieve new heights in their industry, fostering ongoing
           success and growth.`}
