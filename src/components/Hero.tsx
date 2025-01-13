@@ -1,10 +1,10 @@
 import {
   Box,
-  Button,
+  // Button,
   Container,
   Flex,
   Image,
-  Input,
+  // Input,
   Text,
 } from "@chakra-ui/react";
 import Nav from "./Nav";
@@ -20,8 +20,7 @@ const Hero: React.FC = () => {
         height="100%"
         alignItems="center"
         justifyContent="center"
-        px={{ base: "1rem", md: "2rem" }}
-      >
+        px={{ base: "1rem", md: "2rem" }}>
         <Container maxWidth="container.xl">
           <Flex
             alignItems="center"
@@ -29,28 +28,25 @@ const Hero: React.FC = () => {
             gap={{ base: "1rem", md: "2rem" }}
             width="100%"
             py={6}
-            flexDirection={{ base: "column", lg: "row" }}
-          >
+            flexDirection={{ base: "column", lg: "row" }}>
             <Flex
               direction="column"
               alignItems="flex-start"
               maxWidth={{ base: "100%", lg: "600px" }}
-              gap="1.5rem"
-            >
+              gap="1.5rem">
               {/* Heading */}
               <Text
                 fontSize={{ base: "3xl", lg: "5xl" }}
                 fontWeight="bold"
                 lineHeight="1.2"
-                mb="3rem"
-              >
+                mb="3rem">
                 FIND THE <span style={{ color: "#1E57D1" }}>RIGHT</span> TALENT
                 TO HANDLE YOUR <span style={{ color: "#1E57D1" }}>TECH</span>{" "}
                 PROJECTS
               </Text>
 
               {/* Input and Button */}
-              <Flex
+              {/* <Flex
                 alignItems="center"
                 bg="gray.100"
                 borderRadius="full"
@@ -72,7 +68,7 @@ const Hero: React.FC = () => {
                 >
                   Let's Talk
                 </Button>
-              </Flex>
+              </Flex> */}
 
               {/* Description */}
               <Text fontWeight={500} color="gray.600" width="100%">
